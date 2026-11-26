@@ -683,6 +683,15 @@ export const NebulaFighterTheme = createTheme({
         root: {
           '& .MuiTouchRipple-root': {
             opacity: 0.3
+          },
+
+          '&.MuiButtonBase-root': {
+            color: colors.secondary.main,
+
+            '&:hover, &:active, &.active, &.Mui-selected': {
+              color: colors.alpha.black[100],
+              background: alpha(colors.primary.lighter, 0.2)
+            }
           }
         }
       }
@@ -896,20 +905,6 @@ export const NebulaFighterTheme = createTheme({
       }
     },
     MuiListItem: {
-      styleOverrides: {
-        root: {
-          '&.MuiButtonBase-root': {
-            color: colors.secondary.main,
-
-            '&:hover, &:active, &.active, &.Mui-selected': {
-              color: colors.alpha.black[100],
-              background: alpha(colors.primary.lighter, 0.2)
-            }
-          }
-        }
-      }
-    },
-    MuiListItemButton: {
       styleOverrides: {
         root: {
           '&.MuiButtonBase-root': {

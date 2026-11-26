@@ -677,6 +677,15 @@ export const PureLightTheme = createTheme({
         root: {
           '& .MuiTouchRipple-root': {
             opacity: 0.3
+          },
+
+          '&.MuiButtonBase-root': {
+            color: colors.secondary.main,
+
+            '&:hover, &:active, &.active, &.Mui-selected': {
+              color: colors.alpha.black[100],
+              background: lighten(colors.primary.lighter, 0.5)
+            }
           }
         }
       }
@@ -889,20 +898,6 @@ export const PureLightTheme = createTheme({
       }
     },
     MuiListItem: {
-      styleOverrides: {
-        root: {
-          '&.MuiButtonBase-root': {
-            color: colors.secondary.main,
-
-            '&:hover, &:active, &.active, &.Mui-selected': {
-              color: colors.alpha.black[100],
-              background: lighten(colors.primary.lighter, 0.5)
-            }
-          }
-        }
-      }
-    },
-    MuiListItemButton: {
       styleOverrides: {
         root: {
           '&.MuiButtonBase-root': {
