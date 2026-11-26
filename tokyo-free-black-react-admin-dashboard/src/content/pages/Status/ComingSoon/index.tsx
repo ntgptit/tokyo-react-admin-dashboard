@@ -90,7 +90,12 @@ function StatusComingSoon() {
     }
 
     timerComponents.push(
-      <Box textAlign="center" px={3}>
+      <Box
+        sx={{
+          textAlign: 'center',
+          px: 3
+        }}
+      >
         <TypographyH1 variant="h1">{timeLeft[interval]}</TypographyH1>
         <TypographyH3 variant="h3">{interval}</TypographyH3>
       </Box>
@@ -105,16 +110,23 @@ function StatusComingSoon() {
       <MainContent>
         <Container maxWidth="md">
           <Logo />
-          <Box textAlign="center" mb={3}>
+          <Box
+            sx={{
+              textAlign: 'center',
+              mb: 3
+            }}
+          >
             <Container maxWidth="xs">
               <Typography variant="h1" sx={{ mt: 4, mb: 2 }}>
                 Coming Soon
               </Typography>
               <Typography
                 variant="h3"
-                color="text.secondary"
-                fontWeight="normal"
-                sx={{ mb: 4 }}
+                sx={{
+                  color: 'text.secondary',
+                  fontWeight: 'normal',
+                  mb: 4
+                }}
               >
                 We're working on implementing the last features before our
                 launch!
@@ -127,7 +139,12 @@ function StatusComingSoon() {
             />
           </Box>
 
-          <Box display="flex" justifyContent="center">
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'center'
+            }}
+          >
             {timerComponents.length ? timerComponents : <>Time's up!</>}
           </Box>
 

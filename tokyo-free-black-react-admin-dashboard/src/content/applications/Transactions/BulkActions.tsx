@@ -7,6 +7,7 @@ import {
   Button,
   ListItemText,
   ListItem,
+  ListItemButton,
   List,
   Typography
 } from '@mui/material';
@@ -40,9 +41,25 @@ function BulkActions() {
 
   return (
     <>
-      <Box display="flex" alignItems="center" justifyContent="space-between">
-        <Box display="flex" alignItems="center">
-          <Typography variant="h5" color="text.secondary">
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between'
+        }}
+      >
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center'
+          }}
+        >
+          <Typography
+            variant="h5"
+            sx={{
+              color: 'text.secondary'
+            }}
+          >
             Bulk actions:
           </Typography>
           <ButtonError
@@ -78,12 +95,12 @@ function BulkActions() {
         }}
       >
         <List sx={{ p: 1 }} component="nav">
-          <ListItem button>
+          <ListItemButton>
             <ListItemText primary="Bulk delete selected" />
-          </ListItem>
-          <ListItem button>
+          </ListItemButton>
+          <ListItemButton>
             <ListItemText primary="Bulk edit selected" />
-          </ListItem>
+          </ListItemButton>
         </List>
       </Menu>
     </>

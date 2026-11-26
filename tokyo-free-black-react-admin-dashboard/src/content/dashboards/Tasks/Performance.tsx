@@ -82,12 +82,12 @@ function Performance() {
       </Typography>
       <CardContent>
         <Box
-          display="flex"
           sx={{
+            display: 'flex',
+            alignItems: 'center',
             px: 2,
             pb: 3
           }}
-          alignItems="center"
         >
           <AvatarSuccess
             sx={{
@@ -105,12 +105,12 @@ function Performance() {
           </Box>
         </Box>
         <Box
-          display="flex"
           sx={{
+            display: 'flex',
+            alignItems: 'center',
             px: 2,
             pb: 3
           }}
-          alignItems="center"
         >
           <AvatarError
             sx={{
@@ -127,7 +127,11 @@ function Performance() {
             </TypographySecondary>
           </Box>
         </Box>
-        <Box pt={3}>
+        <Box
+          sx={{
+            pt: 3
+          }}
+        >
           <LinearProgressWrapper
             value={73}
             color="primary"

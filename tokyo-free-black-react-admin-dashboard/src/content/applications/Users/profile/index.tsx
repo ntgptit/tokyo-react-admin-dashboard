@@ -32,26 +32,58 @@ function ManagementUserProfile() {
         <Grid
           container
           direction="row"
-          justifyContent="center"
-          alignItems="stretch"
           spacing={3}
+          sx={{
+            justifyContent: 'center',
+            alignItems: 'stretch'
+          }}
         >
-          <Grid item xs={12} md={8}>
+          <Grid
+            size={{
+              xs: 12,
+              md: 8
+            }}
+          >
             <ProfileCover user={user} />
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid
+            size={{
+              xs: 12,
+              md: 4
+            }}
+          >
             <RecentActivity />
           </Grid>
-          <Grid item xs={12} md={8}>
+          <Grid
+            size={{
+              xs: 12,
+              md: 8
+            }}
+          >
             <Feed />
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid
+            size={{
+              xs: 12,
+              md: 4
+            }}
+          >
             <PopularTags />
           </Grid>
-          <Grid item xs={12} md={7}>
+          <Grid
+            size={{
+              xs: 12,
+              md: 7
+            }}
+          >
             <MyCards />
           </Grid>
-          <Grid item xs={12} md={5}>
+          <Grid
+            size={{
+              xs: 12,
+              md: 5
+            }}
+          >
             <Addresses />
           </Grid>
         </Grid>

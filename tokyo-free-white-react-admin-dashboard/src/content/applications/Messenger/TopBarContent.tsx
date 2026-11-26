@@ -12,6 +12,7 @@ import {
   Typography,
   List,
   ListItem,
+  ListItemButton,
   ListItemText,
   ListItemIcon,
   styled,
@@ -101,7 +102,12 @@ function TopBarContent() {
   return (
     <>
       <RootWrapper>
-        <Box display="flex" alignItems="center">
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center'
+          }}
+        >
           <Avatar
             variant="rounded"
             sx={{
@@ -111,7 +117,11 @@ function TopBarContent() {
             alt="Zain Baptista"
             src="/static/images/avatars/1.jpg"
           />
-          <Box ml={1}>
+          <Box
+            sx={{
+              ml: 1
+            }}
+          >
             <Typography variant="h4">Zain Baptista</Typography>
             <Typography variant="subtitle1">
               {formatDistance(subMinutes(new Date(), 8), new Date(), {
@@ -154,9 +164,9 @@ function TopBarContent() {
       >
         <Box
           sx={{
+            p: 2,
             minWidth: 360
           }}
-          p={2}
         >
           <Box
             sx={{
@@ -201,33 +211,39 @@ function TopBarContent() {
               }}
             >
               <List component="nav">
-                <ListItem button>
+                <ListItemButton>
                   <ListItemIconWrapper>
                     <SearchTwoToneIcon />
                   </ListItemIconWrapper>
                   <ListItemText
                     primary="Search in Conversation"
-                    primaryTypographyProps={{ variant: 'h5' }}
+                    slotProps={{
+                      primary: { variant: 'h5' }
+                    }}
                   />
-                </ListItem>
-                <ListItem button>
+                </ListItemButton>
+                <ListItemButton>
                   <ListItemIconWrapper>
                     <ColorLensTwoToneIcon />
                   </ListItemIconWrapper>
                   <ListItemText
                     primary="Change Theme Styling"
-                    primaryTypographyProps={{ variant: 'h5' }}
+                    slotProps={{
+                      primary: { variant: 'h5' }
+                    }}
                   />
-                </ListItem>
-                <ListItem button>
+                </ListItemButton>
+                <ListItemButton>
                   <ListItemIconWrapper>
                     <EmojiEmotionsTwoToneIcon />
                   </ListItemIconWrapper>
                   <ListItemText
                     primary="Choose Default Emoji"
-                    primaryTypographyProps={{ variant: 'h5' }}
+                    slotProps={{
+                      primary: { variant: 'h5' }
+                    }}
                   />
-                </ListItem>
+                </ListItemButton>
               </List>
             </AccordionDetails>
           </Accordion>
@@ -244,44 +260,52 @@ function TopBarContent() {
               }}
             >
               <List component="nav">
-                <ListItem button>
+                <ListItemButton>
                   <ListItemIconWrapper>
                     <NotificationsOffTwoToneIcon />
                   </ListItemIconWrapper>
                   <ListItemText
                     primary="Turn off notifications"
-                    primaryTypographyProps={{ variant: 'h5' }}
+                    slotProps={{
+                      primary: { variant: 'h5' }
+                    }}
                   />
-                </ListItem>
-                <ListItem button>
+                </ListItemButton>
+                <ListItemButton>
                   <ListItemIconWrapper>
                     <CancelTwoToneIcon />
                   </ListItemIconWrapper>
                   <ListItemText
                     primary="Ignore all messages"
-                    primaryTypographyProps={{ variant: 'h5' }}
+                    slotProps={{
+                      primary: { variant: 'h5' }
+                    }}
                   />
-                </ListItem>
-                <ListItem button>
+                </ListItemButton>
+                <ListItemButton>
                   <ListItemIconWrapper>
                     <BlockTwoToneIcon />
                   </ListItemIconWrapper>
                   <ListItemText
                     primary="Block user"
-                    primaryTypographyProps={{ variant: 'h5' }}
+                    slotProps={{
+                      primary: { variant: 'h5' }
+                    }}
                   />
-                </ListItem>
-                <ListItem button>
+                </ListItemButton>
+                <ListItemButton>
                   <ListItemIconWrapper>
                     <WarningTwoToneIcon />
                   </ListItemIconWrapper>
                   <ListItemText
                     primary="Something's Wrong"
-                    primaryTypographyProps={{ variant: 'h5' }}
                     secondary="Report the conversation and provide feedback"
-                    secondaryTypographyProps={{ variant: 'subtitle1' }}
+                    slotProps={{
+                      primary: { variant: 'h5' },
+                      secondary: { variant: 'subtitle1' }
+                    }}
                   />
-                </ListItem>
+                </ListItemButton>
               </List>
             </AccordionDetails>
           </Accordion>
@@ -298,39 +322,45 @@ function TopBarContent() {
               }}
             >
               <List component="nav">
-                <ListItem button>
+                <ListItemButton>
                   <ListItemIconWrapper>
                     <DescriptionTwoToneIcon />
                   </ListItemIconWrapper>
                   <ListItemText
                     primary="HolidayPictures.zip"
-                    primaryTypographyProps={{ variant: 'h5' }}
                     secondary="You opened in the past year"
-                    secondaryTypographyProps={{ variant: 'subtitle1' }}
+                    slotProps={{
+                      primary: { variant: 'h5' },
+                      secondary: { variant: 'subtitle1' }
+                    }}
                   />
-                </ListItem>
-                <ListItem button>
+                </ListItemButton>
+                <ListItemButton>
                   <ListItemIconWrapper>
                     <DescriptionTwoToneIcon />
                   </ListItemIconWrapper>
                   <ListItemText
                     primary="2021Screenshot.jpg"
-                    primaryTypographyProps={{ variant: 'h5' }}
                     secondary="You edited this file yesterday"
-                    secondaryTypographyProps={{ variant: 'subtitle1' }}
+                    slotProps={{
+                      primary: { variant: 'h5' },
+                      secondary: { variant: 'subtitle1' }
+                    }}
                   />
-                </ListItem>
-                <ListItem button>
+                </ListItemButton>
+                <ListItemButton>
                   <ListItemIconWrapper>
                     <DescriptionTwoToneIcon />
                   </ListItemIconWrapper>
                   <ListItemText
                     primary="PresentationDeck.pdf"
-                    primaryTypographyProps={{ variant: 'h5' }}
                     secondary="Never opened"
-                    secondaryTypographyProps={{ variant: 'subtitle1' }}
+                    slotProps={{
+                      primary: { variant: 'h5' },
+                      secondary: { variant: 'subtitle1' }
+                    }}
                   />
-                </ListItem>
+                </ListItemButton>
               </List>
             </AccordionDetails>
           </Accordion>

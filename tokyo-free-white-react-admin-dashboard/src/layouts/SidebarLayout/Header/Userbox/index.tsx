@@ -1,16 +1,18 @@
 import { useRef, useState } from 'react';
 
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router';
 
 import {
   Avatar,
   Box,
   Button,
   Divider,
-  Hidden,
+  useMediaQuery,
+  useTheme,
   lighten,
   List,
   ListItem,
+  ListItemButton,
   ListItemText,
   Popover,
   Typography
@@ -25,8 +27,10 @@ import AccountTreeTwoToneIcon from '@mui/icons-material/AccountTreeTwoTone';
 
 const UserBoxButton = styled(Button)(
   ({ theme }) => `
-        padding-left: ${theme.spacing(1)};
-        padding-right: ${theme.spacing(1)};
+        && {
+          padding-left: ${theme.spacing(1)};
+          padding-right: ${theme.spacing(1)};
+        }
 `
 );
 
@@ -59,6 +63,9 @@ const UserBoxDescription = styled(Typography)(
 );
 
 function HeaderUserbox() {
+  const theme = useTheme();
+  const isMdDown = useMediaQuery(theme.breakpoints.down('lg'));
+  const isSmDown = useMediaQuery(theme.breakpoints.down('md'));
   const user = {
     name: 'Catherine Pike',
     avatar: '/static/images/avatars/1.jpg',
@@ -80,17 +87,21 @@ function HeaderUserbox() {
     <>
       <UserBoxButton color="secondary" ref={ref} onClick={handleOpen}>
         <Avatar variant="rounded" alt={user.name} src={user.avatar} />
-        <Hidden mdDown>
-          <UserBoxText>
-            <UserBoxLabel variant="body1">{user.name}</UserBoxLabel>
-            <UserBoxDescription variant="body2">
-              {user.jobtitle}
-            </UserBoxDescription>
-          </UserBoxText>
-        </Hidden>
-        <Hidden smDown>
-          <ExpandMoreTwoToneIcon sx={{ ml: 1 }} />
-        </Hidden>
+        {!isMdDown && (
+          <>
+            <UserBoxText>
+              <UserBoxLabel variant="body1">{user.name}</UserBoxLabel>
+              <UserBoxDescription variant="body2">
+                {user.jobtitle}
+              </UserBoxDescription>
+            </UserBoxText>
+          </>
+        )}
+        {!isSmDown && (
+          <>
+            <ExpandMoreTwoToneIcon sx={{ ml: 1 }} />
+          </>
+        )}
       </UserBoxButton>
       <Popover
         anchorEl={ref.current}
@@ -105,7 +116,7 @@ function HeaderUserbox() {
           horizontal: 'right'
         }}
       >
-        <MenuUserBox sx={{ minWidth: 210 }} display="flex">
+        <MenuUserBox sx={{ minWidth: 210, display: 'flex' }}>
           <Avatar variant="rounded" alt={user.name} src={user.avatar} />
           <UserBoxText>
             <UserBoxLabel variant="body1">{user.name}</UserBoxLabel>
@@ -116,22 +127,18 @@ function HeaderUserbox() {
         </MenuUserBox>
         <Divider sx={{ mb: 0 }} />
         <List sx={{ p: 1 }} component="nav">
-          <ListItem button to="/management/profile/details" component={NavLink}>
+          <ListItemButton to="/management/profile/details" component={NavLink}>
             <AccountBoxTwoToneIcon fontSize="small" />
             <ListItemText primary="My Profile" />
-          </ListItem>
-          <ListItem button to="/dashboards/messenger" component={NavLink}>
+          </ListItemButton>
+          <ListItemButton to="/dashboards/messenger" component={NavLink}>
             <InboxTwoToneIcon fontSize="small" />
             <ListItemText primary="Messenger" />
-          </ListItem>
-          <ListItem
-            button
-            to="/management/profile/settings"
-            component={NavLink}
-          >
+          </ListItemButton>
+          <ListItemButton to="/management/profile/settings" component={NavLink}>
             <AccountTreeTwoToneIcon fontSize="small" />
             <ListItemText primary="Account Settings" />
-          </ListItem>
+          </ListItemButton>
         </List>
         <Divider />
         <Box sx={{ m: 1 }}>

@@ -34,10 +34,10 @@ function WatchList() {
   return (
     <>
       <Box
-        display="flex"
-        alignItems="center"
-        justifyContent="space-between"
         sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
           pb: 3
         }}
       >
@@ -72,12 +72,12 @@ function WatchList() {
           <Typography
             align="center"
             variant="h2"
-            fontWeight="normal"
-            color="text.secondary"
+            gutterBottom
             sx={{
+              fontWeight: 'normal',
+              color: 'text.secondary',
               mt: 3
             }}
-            gutterBottom
           >
             Click something, anything!
           </Typography>

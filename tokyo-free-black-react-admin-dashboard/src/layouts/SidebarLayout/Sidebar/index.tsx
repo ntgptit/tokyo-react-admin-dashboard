@@ -55,10 +55,14 @@ function Sidebar() {
         }}
       >
         <Scrollbar>
-          <Box mt={3}>
+          <Box
+            sx={{
+              mt: 3
+            }}
+          >
             <Box
-              mx={2}
               sx={{
+                mx: 2,
                 width: 52
               }}
             >
@@ -79,7 +83,11 @@ function Sidebar() {
             background: theme.colors.alpha.trueWhite[10]
           }}
         />
-        <Box p={2}>
+        <Box
+          sx={{
+            p: 2
+          }}
+        >
           <Button
             href="https://bloomui.com"
             target="_blank"
@@ -112,10 +120,14 @@ function Sidebar() {
           }}
         >
           <Scrollbar>
-            <Box mt={3}>
+            <Box
+              sx={{
+                mt: 3
+              }}
+            >
               <Box
-                mx={2}
                 sx={{
+                  mx: 2,
                   width: 52
                 }}
               >

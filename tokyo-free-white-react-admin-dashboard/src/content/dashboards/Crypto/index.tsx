@@ -22,20 +22,32 @@ function DashboardCrypto() {
         <Grid
           container
           direction="row"
-          justifyContent="center"
-          alignItems="stretch"
           spacing={4}
+          sx={{
+            justifyContent: 'center',
+            alignItems: 'stretch'
+          }}
         >
-          <Grid item xs={12}>
+          <Grid size={12}>
             <AccountBalance />
           </Grid>
-          <Grid item lg={8} xs={12}>
+          <Grid
+            size={{
+              lg: 8,
+              xs: 12
+            }}
+          >
             <Wallets />
           </Grid>
-          <Grid item lg={4} xs={12}>
+          <Grid
+            size={{
+              lg: 4,
+              xs: 12
+            }}
+          >
             <AccountSecurity />
           </Grid>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <WatchList />
           </Grid>
         </Grid>

@@ -9,7 +9,7 @@ import {
   Button,
   ListItem
 } from '@mui/material';
-import { NavLink as RouterLink } from 'react-router-dom';
+import { NavLink as RouterLink } from 'react-router';
 import { SidebarContext } from 'src/contexts/SidebarContext';
 
 import DesignServicesTwoToneIcon from '@mui/icons-material/DesignServicesTwoTone';
@@ -92,6 +92,7 @@ const SubMenuWrapper = styled(Box)(
           }
 
           .MuiButton-startIcon {
+            line-height: 1;
             color: ${theme.colors.alpha.trueWhite[30]};
             font-size: ${theme.typography.pxToRem(20)};
             margin-right: ${theme.spacing(1)};

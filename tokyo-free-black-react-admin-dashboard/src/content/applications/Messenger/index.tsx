@@ -128,7 +128,11 @@ function ApplicationsMessenger() {
             </IconButtonToggle>
             <TopBarContent />
           </ChatTopBar>
-          <Box flex={1}>
+          <Box
+            sx={{
+              flex: 1
+            }}
+          >
             <Scrollbar>
               <ChatContent />
             </Scrollbar>

@@ -35,16 +35,22 @@ function StatusMaintenance() {
       <MainContent>
         <Container maxWidth="md">
           <Logo />
-          <Box textAlign="center">
+          <Box
+            sx={{
+              textAlign: 'center'
+            }}
+          >
             <Container maxWidth="xs">
               <Typography variant="h2" sx={{ mt: 4, mb: 2 }}>
                 The site is currently down for maintenance
               </Typography>
               <Typography
                 variant="h3"
-                color="text.secondary"
-                fontWeight="normal"
-                sx={{ mb: 4 }}
+                sx={{
+                  color: 'text.secondary',
+                  fontWeight: 'normal',
+                  mb: 4
+                }}
               >
                 We apologize for any inconveniences caused
               </Typography>
@@ -57,9 +63,11 @@ function StatusMaintenance() {
           </Box>
           <Divider sx={{ my: 4 }} />
           <Box
-            display="flex"
-            alignItems="center"
-            justifyContent="space-between"
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between'
+            }}
           >
             <Box>
               <Typography component="span" variant="subtitle1">
@@ -68,7 +76,9 @@ function StatusMaintenance() {
               <Typography
                 component="span"
                 variant="subtitle1"
-                color="text.primary"
+                sx={{
+                  color: 'text.primary'
+                }}
               >
                 + 00 1 888 555 444
               </Typography>

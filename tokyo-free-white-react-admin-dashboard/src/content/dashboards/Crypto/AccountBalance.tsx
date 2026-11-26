@@ -130,8 +130,17 @@ function AccountBalance() {
   return (
     <Card>
       <Grid spacing={0} container>
-        <Grid item xs={12} md={6}>
-          <Box p={4}>
+        <Grid
+          size={{
+            xs: 12,
+            md: 6
+          }}
+        >
+          <Box
+            sx={{
+              p: 4
+            }}
+          >
             <Typography
               sx={{
                 pb: 3
@@ -146,17 +155,19 @@ function AccountBalance() {
               </Typography>
               <Typography
                 variant="h4"
-                fontWeight="normal"
-                color="text.secondary"
+                sx={{
+                  fontWeight: 'normal',
+                  color: 'text.secondary'
+                }}
               >
                 1.0045983485234 BTC
               </Typography>
               <Box
-                display="flex"
                 sx={{
+                  display: 'flex',
+                  alignItems: 'center',
                   py: 4
                 }}
-                alignItems="center"
               >
                 <AvatarSuccess
                   sx={{
@@ -175,12 +186,20 @@ function AccountBalance() {
               </Box>
             </Box>
             <Grid container spacing={3}>
-              <Grid sm item>
+              <Grid
+                size={{
+                  sm: 'grow'
+                }}
+              >
                 <Button fullWidth variant="outlined">
                   Send
                 </Button>
               </Grid>
-              <Grid sm item>
+              <Grid
+                size={{
+                  sm: 'grow'
+                }}
+              >
                 <Button fullWidth variant="contained">
                   Receive
                 </Button>
@@ -190,13 +209,14 @@ function AccountBalance() {
         </Grid>
         <Grid
           sx={{
+            display: 'flex',
+            alignItems: 'center',
             position: 'relative'
           }}
-          display="flex"
-          alignItems="center"
-          item
-          xs={12}
-          md={6}
+          size={{
+            xs: 12,
+            md: 6
+          }}
         >
           <Box
             component="span"
@@ -206,24 +226,45 @@ function AccountBalance() {
           >
             <Divider absolute orientation="vertical" />
           </Box>
-          <Box py={4} pr={4} flex={1}>
+          <Box
+            sx={{
+              py: 4,
+              pr: 4,
+              flex: 1
+            }}
+          >
             <Grid container spacing={0}>
               <Grid
-                xs={12}
-                sm={5}
-                item
-                display="flex"
-                justifyContent="center"
-                alignItems="center"
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center'
+                }}
+                size={{
+                  xs: 12,
+                  sm: 5
+                }}
               >
-                <Chart
-                  height={250}
-                  options={chartOptions}
-                  series={chartSeries}
-                  type="donut"
-                />
+                <Box sx={{ width: '100%', minWidth: 0 }}>
+                  <Chart
+                    width="100%"
+                    height={250}
+                    options={chartOptions}
+                    series={chartSeries}
+                    type="donut"
+                  />
+                </Box>
               </Grid>
-              <Grid xs={12} sm={7} item display="flex" alignItems="center">
+              <Grid
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center'
+                }}
+                size={{
+                  xs: 12,
+                  sm: 7
+                }}
+              >
                 <List
                   disablePadding
                   sx={{
@@ -239,11 +280,11 @@ function AccountBalance() {
                     </ListItemAvatarWrapper>
                     <ListItemText
                       primary="BTC"
-                      primaryTypographyProps={{ variant: 'h5', noWrap: true }}
+
                       secondary="Bitcoin"
-                      secondaryTypographyProps={{
-                        variant: 'subtitle2',
-                        noWrap: true
+                      slotProps={{
+                        primary: { variant: 'h5', noWrap: true },
+                        secondary: { variant: 'subtitle2', noWrap: true }
                       }}
                     />
                     <Box>
@@ -262,11 +303,11 @@ function AccountBalance() {
                     </ListItemAvatarWrapper>
                     <ListItemText
                       primary="XRP"
-                      primaryTypographyProps={{ variant: 'h5', noWrap: true }}
+
                       secondary="Ripple"
-                      secondaryTypographyProps={{
-                        variant: 'subtitle2',
-                        noWrap: true
+                      slotProps={{
+                        primary: { variant: 'h5', noWrap: true },
+                        secondary: { variant: 'subtitle2', noWrap: true }
                       }}
                     />
                     <Box>
@@ -285,11 +326,11 @@ function AccountBalance() {
                     </ListItemAvatarWrapper>
                     <ListItemText
                       primary="ADA"
-                      primaryTypographyProps={{ variant: 'h5', noWrap: true }}
+
                       secondary="Cardano"
-                      secondaryTypographyProps={{
-                        variant: 'subtitle2',
-                        noWrap: true
+                      slotProps={{
+                        primary: { variant: 'h5', noWrap: true },
+                        secondary: { variant: 'subtitle2', noWrap: true }
                       }}
                     />
                     <Box>
@@ -308,11 +349,11 @@ function AccountBalance() {
                     </ListItemAvatarWrapper>
                     <ListItemText
                       primary="ETH"
-                      primaryTypographyProps={{ variant: 'h5', noWrap: true }}
+
                       secondary="Ethereum"
-                      secondaryTypographyProps={{
-                        variant: 'subtitle2',
-                        noWrap: true
+                      slotProps={{
+                        primary: { variant: 'h5', noWrap: true },
+                        secondary: { variant: 'subtitle2', noWrap: true }
                       }}
                     />
                     <Box>

@@ -1,6 +1,6 @@
 import { Box, Button, Container, Grid, Typography } from '@mui/material';
 
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router';
 
 import { styled } from '@mui/material/styles';
 
@@ -75,20 +75,33 @@ function Hero() {
     <Container maxWidth="lg" sx={{ textAlign: 'center' }}>
       <Grid
         spacing={{ xs: 6, md: 10 }}
-        justifyContent="center"
-        alignItems="center"
         container
+        sx={{
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}
       >
-        <Grid item md={10} lg={8} mx="auto">
+        <Grid
+          sx={{
+            mx: 'auto'
+          }}
+          size={{
+            md: 10,
+            lg: 8
+          }}
+        >
           <LabelWrapper color="success">Version 2.0.0</LabelWrapper>
           <TypographyH1 sx={{ mb: 2 }} variant="h1">
             Tokyo Free Black React Typescript Admin Dashboard
           </TypographyH1>
           <TypographyH2
-            sx={{ lineHeight: 1.5, pb: 4 }}
+            sx={{
+              lineHeight: 1.5,
+              pb: 4,
+              color: 'text.secondary',
+              fontWeight: 'normal'
+            }}
             variant="h4"
-            color="text.secondary"
-            fontWeight="normal"
           >
             High performance React template built with lots of powerful
             Material-UI components across multiple product niches for fast &
@@ -113,8 +126,18 @@ function Hero() {
           >
             Key Features
           </Button>
-          <Grid container spacing={3} mt={5}>
-            <Grid item md={6}>
+          <Grid
+            container
+            spacing={3}
+            sx={{
+              mt: 8
+            }}
+          >
+            <Grid
+              size={{
+                md: 6
+              }}
+            >
               <MuiAvatar>
                 <img
                   src="/static/images/logo/material-ui.svg"
@@ -131,7 +154,11 @@ function Hero() {
                 </Typography>
               </Typography>
             </Grid>
-            <Grid item md={6}>
+            <Grid
+              size={{
+                md: 6
+              }}
+            >
               <TsAvatar>
                 <img
                   src="/static/images/logo/typescript.svg"

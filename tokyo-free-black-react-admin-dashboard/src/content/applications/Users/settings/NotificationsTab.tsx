@@ -28,8 +28,12 @@ function NotificationsTab() {
 
   return (
     <Grid container spacing={3}>
-      <Grid item xs={12}>
-        <Box pb={2}>
+      <Grid size={12}>
+        <Box
+          sx={{
+            pb: 2
+          }}
+        >
           <Typography variant="h3">Account</Typography>
           <Typography variant="subtitle2">
             Choose what notifications you want to receive
@@ -39,13 +43,16 @@ function NotificationsTab() {
           <List>
             <ListItem sx={{ p: 3 }}>
               <ListItemText
-                primaryTypographyProps={{ variant: 'h5', gutterBottom: true }}
-                secondaryTypographyProps={{
-                  variant: 'subtitle2',
-                  lineHeight: 1
-                }}
                 primary="Widthdraw Activity"
                 secondary="Receive an email when a widthdrawal is made"
+                slotProps={{
+                  primary: { variant: 'h5', gutterBottom: true },
+
+                  secondary: {
+                    variant: 'subtitle2',
+                    sx: { lineHeight: 1 }
+                  }
+                }}
               />
               <Switch
                 color="primary"
@@ -57,13 +64,16 @@ function NotificationsTab() {
             <Divider component="li" />
             <ListItem sx={{ p: 3 }}>
               <ListItemText
-                primaryTypographyProps={{ variant: 'h5', gutterBottom: true }}
-                secondaryTypographyProps={{
-                  variant: 'subtitle2',
-                  lineHeight: 1
-                }}
                 primary="Weekly Report"
                 secondary="Receive account status weekly report in your inbox"
+                slotProps={{
+                  primary: { variant: 'h5', gutterBottom: true },
+
+                  secondary: {
+                    variant: 'subtitle2',
+                    sx: { lineHeight: 1 }
+                  }
+                }}
               />
               <Switch
                 color="primary"
@@ -75,8 +85,12 @@ function NotificationsTab() {
           </List>
         </Card>
       </Grid>
-      <Grid item xs={12}>
-        <Box pb={2}>
+      <Grid size={12}>
+        <Box
+          sx={{
+            pb: 2
+          }}
+        >
           <Typography variant="h3">Orders</Typography>
           <Typography variant="subtitle2">
             Receive email notifications related to your orders activity
@@ -86,13 +100,16 @@ function NotificationsTab() {
           <List>
             <ListItem sx={{ p: 3 }}>
               <ListItemText
-                primaryTypographyProps={{ variant: 'h5', gutterBottom: true }}
-                secondaryTypographyProps={{
-                  variant: 'subtitle2',
-                  lineHeight: 1
-                }}
                 primary="Failed Payment"
                 secondary="Get a message when a payment fails"
+                slotProps={{
+                  primary: { variant: 'h5', gutterBottom: true },
+
+                  secondary: {
+                    variant: 'subtitle2',
+                    sx: { lineHeight: 1 }
+                  }
+                }}
               />
               <Switch
                 color="primary"
@@ -104,13 +121,16 @@ function NotificationsTab() {
             <Divider component="li" />
             <ListItem sx={{ p: 3 }}>
               <ListItemText
-                primaryTypographyProps={{ variant: 'h5', gutterBottom: true }}
-                secondaryTypographyProps={{
-                  variant: 'subtitle2',
-                  lineHeight: 1
-                }}
                 primary="Order Status Update"
                 secondary="Whenever an order is updated, get a notification on your phone"
+                slotProps={{
+                  primary: { variant: 'h5', gutterBottom: true },
+
+                  secondary: {
+                    variant: 'subtitle2',
+                    sx: { lineHeight: 1 }
+                  }
+                }}
               />
               <Switch
                 color="primary"

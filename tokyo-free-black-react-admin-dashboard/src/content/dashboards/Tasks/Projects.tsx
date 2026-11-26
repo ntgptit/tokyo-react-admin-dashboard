@@ -14,7 +14,7 @@ import {
   useTheme
 } from '@mui/material';
 import MoreVertTwoToneIcon from '@mui/icons-material/MoreVertTwoTone';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router';
 import Text from 'src/components/Text';
 import CalendarTodayTwoToneIcon from '@mui/icons-material/CalendarTodayTwoTone';
 import CheckTwoToneIcon from '@mui/icons-material/CheckTwoTone';
@@ -60,10 +60,10 @@ function Projects() {
   return (
     <>
       <Box
-        display="flex"
-        alignItems="center"
-        justifyContent="space-between"
         sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
           pb: 3
         }}
       >
@@ -75,7 +75,12 @@ function Projects() {
         </Box>
       </Box>
       <Grid container spacing={4}>
-        <Grid item xs={12} md={4}>
+        <Grid
+          size={{
+            xs: 12,
+            md: 4
+          }}
+        >
           <Box>
             <CardHeader
               sx={{
@@ -93,9 +98,11 @@ function Projects() {
                 </IconButton>
               }
               title="Fix Urgent Mobile App Bugs"
-              titleTypographyProps={{
-                variant: 'h5',
-                color: 'textPrimary'
+              slotProps={{
+                title: {
+                  variant: 'h5',
+                  color: 'textPrimary'
+                }
               }}
             />
             <Box>
@@ -212,7 +219,12 @@ function Projects() {
             </Box>
           </Box>
         </Grid>
-        <Grid item xs={12} md={4}>
+        <Grid
+          size={{
+            xs: 12,
+            md: 4
+          }}
+        >
           <Box>
             <CardHeader
               sx={{
@@ -234,9 +246,11 @@ function Projects() {
                 </IconButton>
               }
               title="Replace Placeholder Images"
-              titleTypographyProps={{
-                variant: 'h5',
-                color: 'textPrimary'
+              slotProps={{
+                title: {
+                  variant: 'h5',
+                  color: 'textPrimary'
+                }
               }}
             />
             <Box>
@@ -329,7 +343,12 @@ function Projects() {
             </Box>
           </Box>
         </Grid>
-        <Grid item xs={12} md={4}>
+        <Grid
+          size={{
+            xs: 12,
+            md: 4
+          }}
+        >
           <Box>
             <CardHeader
               sx={{
@@ -360,9 +379,11 @@ function Projects() {
                 </IconButton>
               }
               title="BloomUI Redesign Project"
-              titleTypographyProps={{
-                variant: 'h5',
-                color: 'textPrimary'
+              slotProps={{
+                title: {
+                  variant: 'h5',
+                  color: 'textPrimary'
+                }
               }}
             />
             <Box>

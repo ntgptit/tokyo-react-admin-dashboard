@@ -36,8 +36,6 @@ function ActivityTab() {
             <MoreHorizTwoToneIcon fontSize="medium" />
           </IconButton>
         }
-        titleTypographyProps={{ variant: 'h4' }}
-        subheaderTypographyProps={{ variant: 'subtitle2' }}
         title="Allison Lipshutz"
         subheader={
           <>
@@ -52,9 +50,23 @@ function ActivityTab() {
             , Google Inc.
           </>
         }
+        slotProps={{
+          title: { variant: 'h4' },
+          subheader: { variant: 'subtitle2' }
+        }}
       />
-      <Box px={3} pb={2}>
-        <Typography variant="h4" fontWeight="normal">
+      <Box
+        sx={{
+          px: 3,
+          pb: 2
+        }}
+      >
+        <Typography
+          variant="h4"
+          sx={{
+            fontWeight: 'normal'
+          }}
+        >
           Welcome to organizing your remote office for maximum productivity.
         </Typography>
       </Box>
@@ -63,7 +75,11 @@ function ActivityTab() {
         image="/static/images/placeholders/covers/6.jpg"
         title="Card Cover"
       />
-      <Box p={3}>
+      <Box
+        sx={{
+          p: 3
+        }}
+      >
         <Typography variant="h2" sx={{ pb: 1 }}>
           Organizing Your Remote Office for Maximum Productivity
         </Typography>

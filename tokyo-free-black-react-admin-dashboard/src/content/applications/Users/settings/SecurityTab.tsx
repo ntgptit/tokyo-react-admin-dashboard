@@ -23,7 +23,7 @@ import {
   TableRow,
   TableContainer,
   useTheme,
-  styled,
+  styled
 } from '@mui/material';
 
 import DoneTwoToneIcon from '@mui/icons-material/DoneTwoTone';
@@ -116,8 +116,12 @@ function SecurityTab() {
 
   return (
     <Grid container spacing={3}>
-      <Grid item xs={12}>
-        <Box pb={2}>
+      <Grid size={12}>
+        <Box
+          sx={{
+            pb: 2
+          }}
+        >
           <Typography variant="h3">Social Accounts</Typography>
           <Typography variant="subtitle2">
             Manage connected social accounts options
@@ -130,13 +134,16 @@ function SecurityTab() {
                 <AvatarWrapper src="/static/images/logo/google.svg" />
               </ListItemAvatar>
               <ListItemText
-                primaryTypographyProps={{ variant: 'h5', gutterBottom: true }}
-                secondaryTypographyProps={{
-                  variant: 'subtitle2',
-                  lineHeight: 1
-                }}
                 primary="Google"
                 secondary="A Google account hasn’t been yet added to your account"
+                slotProps={{
+                  primary: { variant: 'h5', gutterBottom: true },
+
+                  secondary: {
+                    variant: 'subtitle2',
+                    sx: { lineHeight: 1 }
+                  }
+                }}
               />
               <Button color="secondary" size="large" variant="contained">
                 Connect
@@ -145,7 +152,7 @@ function SecurityTab() {
           </List>
         </Card>
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Card>
           <List>
             <ListItem sx={{ p: 3 }}>
@@ -155,13 +162,16 @@ function SecurityTab() {
                 </AvatarSuccess>
               </ListItemAvatar>
               <ListItemText
-                primaryTypographyProps={{ variant: 'h5', gutterBottom: true }}
-                secondaryTypographyProps={{
-                  variant: 'subtitle2',
-                  lineHeight: 1
-                }}
                 primary="Facebook"
                 secondary="Your Facebook account has been successfully connected"
+                slotProps={{
+                  primary: { variant: 'h5', gutterBottom: true },
+
+                  secondary: {
+                    variant: 'subtitle2',
+                    sx: { lineHeight: 1 }
+                  }
+                }}
               />
               <ButtonError size="large" variant="contained">
                 Revoke access
@@ -175,13 +185,16 @@ function SecurityTab() {
                 </AvatarSuccess>
               </ListItemAvatar>
               <ListItemText
-                primaryTypographyProps={{ variant: 'h5', gutterBottom: true }}
-                secondaryTypographyProps={{
-                  variant: 'subtitle2',
-                  lineHeight: 1
-                }}
                 primary="Twitter"
                 secondary="Your Twitter account was last syncronized 6 days ago"
+                slotProps={{
+                  primary: { variant: 'h5', gutterBottom: true },
+
+                  secondary: {
+                    variant: 'subtitle2',
+                    sx: { lineHeight: 1 }
+                  }
+                }}
               />
               <ButtonError size="large" variant="contained">
                 Revoke access
@@ -190,8 +203,12 @@ function SecurityTab() {
           </List>
         </Card>
       </Grid>
-      <Grid item xs={12}>
-        <Box pb={2}>
+      <Grid size={12}>
+        <Box
+          sx={{
+            pb: 2
+          }}
+        >
           <Typography variant="h3">Security</Typography>
           <Typography variant="subtitle2">
             Change your security preferences below
@@ -201,13 +218,16 @@ function SecurityTab() {
           <List>
             <ListItem sx={{ p: 3 }}>
               <ListItemText
-                primaryTypographyProps={{ variant: 'h5', gutterBottom: true }}
-                secondaryTypographyProps={{
-                  variant: 'subtitle2',
-                  lineHeight: 1
-                }}
                 primary="Change Password"
                 secondary="You can change your password here"
+                slotProps={{
+                  primary: { variant: 'h5', gutterBottom: true },
+
+                  secondary: {
+                    variant: 'subtitle2',
+                    sx: { lineHeight: 1 }
+                  }
+                }}
               />
               <Button size="large" variant="outlined">
                 Change password
@@ -216,26 +236,31 @@ function SecurityTab() {
             <Divider component="li" />
             <ListItem sx={{ p: 3 }}>
               <ListItemText
-                primaryTypographyProps={{ variant: 'h5', gutterBottom: true }}
-                secondaryTypographyProps={{
-                  variant: 'subtitle2',
-                  lineHeight: 1
-                }}
                 primary="Two-Factor Authentication"
                 secondary="Enable PIN verification for all sign in attempts"
+                slotProps={{
+                  primary: { variant: 'h5', gutterBottom: true },
+
+                  secondary: {
+                    variant: 'subtitle2',
+                    sx: { lineHeight: 1 }
+                  }
+                }}
               />
               <Switch color="primary" />
             </ListItem>
           </List>
         </Card>
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Card>
           <CardHeader
-            subheaderTypographyProps={{}}
-            titleTypographyProps={{}}
             title="Access Logs"
             subheader="Recent sign in activity logs"
+            slotProps={{
+              title: {},
+              subheader: {}
+            }}
           />
           <Divider />
           <TableContainer>
@@ -279,7 +304,11 @@ function SecurityTab() {
               </TableBody>
             </Table>
           </TableContainer>
-          <Box p={2}>
+          <Box
+            sx={{
+              p: 2
+            }}
+          >
             <TablePagination
               component="div"
               count={100}

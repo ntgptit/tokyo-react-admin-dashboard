@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import PropTypes from 'prop-types';
 import AddTwoToneIcon from '@mui/icons-material/AddTwoTone';
-import { Typography, Button, Grid } from '@mui/material';
+import { Typography, Button, Grid, GridProps } from '@mui/material';
 
-interface PageTitleProps {
+interface PageTitleProps extends Omit<GridProps, 'children'> {
   heading?: string;
   subHeading?: string;
   docs?: string;
@@ -18,17 +18,16 @@ const PageTitle: FC<PageTitleProps> = ({
   return (
     <Grid
       container
-      justifyContent="space-between"
-      alignItems="center"
+      sx={{ justifyContent: 'space-between', alignItems: 'center' }}
       {...rest}
     >
-      <Grid item>
+      <Grid>
         <Typography variant="h3" component="h3" gutterBottom>
           {heading}
         </Typography>
         <Typography variant="subtitle2">{subHeading}</Typography>
       </Grid>
-      <Grid item>
+      <Grid>
         <Button
           href={docs}
           target="_blank"

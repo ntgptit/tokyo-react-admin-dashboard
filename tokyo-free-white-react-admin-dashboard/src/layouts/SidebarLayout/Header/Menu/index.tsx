@@ -2,12 +2,13 @@ import {
   Box,
   List,
   ListItem,
+  ListItemButton,
   ListItemText,
   Menu,
   MenuItem
 } from '@mui/material';
 import { useRef, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router';
 import { styled } from '@mui/material/styles';
 import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
 
@@ -17,7 +18,7 @@ const ListWrapper = styled(Box)(
             display: none;
         }
         
-        .MuiListItem-root {
+        .MuiListItemButton-root {
             transition: ${theme.transitions.create(['color', 'fill'])};
             
             &.MuiListItem-indicators {
@@ -84,48 +85,65 @@ function HeaderMenu() {
           }
         }}
       >
-        <List disablePadding component={Box} display="flex">
-          <ListItem
+        <Box component="nav" sx={{ display: 'flex' }}>
+          <ListItemButton
             classes={{ root: 'MuiListItem-indicators' }}
-            button
+
             component={NavLink}
             to="/components/buttons"
           >
             <ListItemText
-              primaryTypographyProps={{ noWrap: true }}
               primary="Buttons"
+              slotProps={{
+                primary: { noWrap: true }
+              }}
             />
-          </ListItem>
-          <ListItem
+          </ListItemButton>
+          <ListItemButton
             classes={{ root: 'MuiListItem-indicators' }}
-            button
+
             component={NavLink}
             to="/components/forms"
           >
             <ListItemText
-              primaryTypographyProps={{ noWrap: true }}
               primary="Forms"
+              slotProps={{
+                primary: { noWrap: true }
+              }}
             />
-          </ListItem>
-          <ListItem
+          </ListItemButton>
+          <ListItemButton
             classes={{ root: 'MuiListItem-indicators' }}
-            button
+
             ref={ref}
             onClick={handleOpen}
           >
             <ListItemText
-              primaryTypographyProps={{ noWrap: true }}
               primary={
-                <Box display="flex" alignItems="center">
+                <Box
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center'
+                  }}
+                >
                   Others
-                  <Box display="flex" alignItems="center" pl={0.3}>
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      pl: 0.3
+                    }}
+                  >
                     <ExpandMoreTwoToneIcon fontSize="small" />
                   </Box>
                 </Box>
               }
+              slotProps={{
+                primary: { noWrap: true }
+              }}
             />
-          </ListItem>
-        </List>
+          </ListItemButton>
+        </Box>
       </ListWrapper>
       <Menu anchorEl={ref.current} onClose={handleClose} open={isOpen}>
         <MenuItem sx={{ px: 3 }} component={NavLink} to="/overview">

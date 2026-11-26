@@ -21,7 +21,6 @@ function stringToColor(string: string) {
   let hash = 0;
   let i;
 
-  /* eslint-disable no-bitwise */
   for (i = 0; i < string.length; i += 1) {
     hash = string.charCodeAt(i) + ((hash << 5) - hash);
   }
@@ -32,7 +31,6 @@ function stringToColor(string: string) {
     const value = (hash >> (i * 8)) & 0xff;
     color += `00${value.toString(16)}`.substr(-2);
   }
-  /* eslint-enable no-bitwise */
 
   return color;
 }
@@ -63,11 +61,13 @@ function Avatars() {
         <Grid
           container
           direction="row"
-          justifyContent="center"
-          alignItems="stretch"
           spacing={3}
+          sx={{
+            justifyContent: 'center',
+            alignItems: 'stretch'
+          }}
         >
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Card>
               <CardHeader title="Images" />
               <Divider />
@@ -86,7 +86,7 @@ function Avatars() {
               </CardContent>
             </Card>
           </Grid>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Card>
               <CardHeader title="Letters" />
               <Divider />
@@ -105,7 +105,7 @@ function Avatars() {
               </CardContent>
             </Card>
           </Grid>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Card>
               <CardHeader title="Sizes" />
               <Divider />
@@ -126,7 +126,7 @@ function Avatars() {
               </CardContent>
             </Card>
           </Grid>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Card>
               <CardHeader title="Icons" />
               <Divider />

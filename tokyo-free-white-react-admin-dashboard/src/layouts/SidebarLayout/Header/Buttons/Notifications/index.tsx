@@ -81,10 +81,12 @@ function HeaderNotifications() {
         }}
       >
         <Box
-          sx={{ p: 2 }}
-          display="flex"
-          alignItems="center"
-          justifyContent="space-between"
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            p: 2
+          }}
         >
           <Typography variant="h5">Notifications</Typography>
         </Box>
@@ -93,8 +95,17 @@ function HeaderNotifications() {
           <ListItem
             sx={{ p: 2, minWidth: 350, display: { xs: 'block', sm: 'flex' } }}
           >
-            <Box flex="1">
-              <Box display="flex" justifyContent="space-between">
+            <Box
+              sx={{
+                flex: '1'
+              }}
+            >
+              <Box
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'space-between'
+                }}
+              >
                 <Typography sx={{ fontWeight: 'bold' }}>
                   Messaging Platform
                 </Typography>
@@ -107,7 +118,9 @@ function HeaderNotifications() {
               <Typography
                 component="span"
                 variant="body2"
-                color="text.secondary"
+                sx={{
+                  color: 'text.secondary'
+                }}
               >
                 {' '}
                 new messages in your inbox

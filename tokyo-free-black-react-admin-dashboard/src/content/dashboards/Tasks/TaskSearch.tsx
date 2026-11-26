@@ -24,7 +24,7 @@ import {
 } from '@mui/material';
 import { formatDistance, subMonths, subDays } from 'date-fns';
 import TodayTwoToneIcon from '@mui/icons-material/TodayTwoTone';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router';
 import SearchTwoToneIcon from '@mui/icons-material/SearchTwoTone';
 import Text from 'src/components/Text';
 import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
@@ -87,10 +87,12 @@ function TaskSearch() {
         />
       </FormControl>
       <Box
-        py={3}
-        display="flex"
-        alignItems="center"
-        justifyContent="space-between"
+        sx={{
+          py: 3,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between'
+        }}
       >
         <Box>
           <Typography variant="subtitle2">
@@ -100,7 +102,12 @@ function TaskSearch() {
             </Text>
           </Typography>
         </Box>
-        <Box display="flex" alignItems="center">
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center'
+          }}
+        >
           <Typography
             variant="subtitle2"
             sx={{
@@ -147,7 +154,12 @@ function TaskSearch() {
         </Box>
       </Box>
       <Grid container spacing={3}>
-        <Grid item xs={12} md={4}>
+        <Grid
+          size={{
+            xs: 12,
+            md: 4
+          }}
+        >
           <Card
             variant="outlined"
             sx={{
@@ -158,7 +170,13 @@ function TaskSearch() {
             <Box>
               <Rating value={4} defaultValue={5} precision={1} readOnly />
             </Box>
-            <Link href="#" variant="h3" color="text.primary">
+            <Link
+              href="#"
+              variant="h3"
+              sx={{
+                color: 'text.primary'
+              }}
+            >
               Migrate hosting to a more performant web server datacenter
             </Link>
             <Box
@@ -189,9 +207,9 @@ function TaskSearch() {
             </Box>
             <Typography
               sx={{
+                color: 'text.secondary',
                 pb: 2
               }}
-              color="text.secondary"
             >
               It is a long established fact that a reader will be distracted by
               the readable content of a page when looking at its layout beatae
@@ -213,9 +231,11 @@ function TaskSearch() {
               }}
             >
               <Typography
-                display="flex"
-                alignItems="center"
                 variant="subtitle2"
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center'
+                }}
               >
                 <TodayTwoToneIcon
                   sx={{
@@ -255,7 +275,12 @@ function TaskSearch() {
             </CardActions>
           </Card>
         </Grid>
-        <Grid item xs={12} md={4}>
+        <Grid
+          size={{
+            xs: 12,
+            md: 4
+          }}
+        >
           <Card
             variant="outlined"
             sx={{
@@ -266,7 +291,13 @@ function TaskSearch() {
             <Box>
               <Rating value={4} defaultValue={5} precision={1} readOnly />
             </Box>
-            <Link href="#" variant="h3" color="text.primary">
+            <Link
+              href="#"
+              variant="h3"
+              sx={{
+                color: 'text.primary'
+              }}
+            >
               Improve conversion rated by integrating new analytics tools
             </Link>
             <Box
@@ -297,9 +328,9 @@ function TaskSearch() {
             </Box>
             <Typography
               sx={{
+                color: 'text.secondary',
                 pb: 2
               }}
-              color="text.secondary"
             >
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
               accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
@@ -321,9 +352,11 @@ function TaskSearch() {
               }}
             >
               <Typography
-                display="flex"
-                alignItems="center"
                 variant="subtitle2"
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center'
+                }}
               >
                 <TodayTwoToneIcon
                   sx={{
@@ -375,7 +408,12 @@ function TaskSearch() {
             </CardActions>
           </Card>
         </Grid>
-        <Grid item xs={12} md={4}>
+        <Grid
+          size={{
+            xs: 12,
+            md: 4
+          }}
+        >
           <Card
             variant="outlined"
             sx={{
@@ -386,7 +424,13 @@ function TaskSearch() {
             <Box>
               <Rating value={4} defaultValue={5} precision={1} readOnly />
             </Box>
-            <Link href="#" variant="h3" color="text.primary">
+            <Link
+              href="#"
+              variant="h3"
+              sx={{
+                color: 'text.primary'
+              }}
+            >
               Increase the website speed on mobile and tablet devices
             </Link>
             <Box
@@ -417,9 +461,9 @@ function TaskSearch() {
             </Box>
             <Typography
               sx={{
+                color: 'text.secondary',
                 pb: 2
               }}
-              color="text.secondary"
             >
               Nemo enim ipsam voluptatem quia accusantium doloremque laudantium
               voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
@@ -441,9 +485,11 @@ function TaskSearch() {
               }}
             >
               <Typography
-                display="flex"
-                alignItems="center"
                 variant="subtitle2"
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center'
+                }}
               >
                 <TodayTwoToneIcon
                   sx={{
@@ -498,11 +544,11 @@ function TaskSearch() {
       </Grid>
       <Box
         sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
           pt: 4
         }}
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
       >
         <Pagination
           showFirstButton

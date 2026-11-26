@@ -75,11 +75,13 @@ function Cards() {
         <Grid
           container
           direction="row"
-          justifyContent="center"
-          alignItems="stretch"
           spacing={3}
+          sx={{
+            justifyContent: 'center',
+            alignItems: 'stretch'
+          }}
         >
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Card>
               <CardHeader title="Basic" />
               <Divider />
@@ -87,16 +89,23 @@ function Cards() {
                 <Card sx={{ minWidth: 275 }}>
                   <CardContent>
                     <Typography
-                      sx={{ fontSize: 14 }}
-                      color="text.secondary"
                       gutterBottom
+                      sx={{
+                        color: 'text.secondary',
+                        fontSize: 14
+                      }}
                     >
                       Word of the Day
                     </Typography>
                     <Typography variant="h5" component="div">
                       be{bull}nev{bull}o{bull}lent
                     </Typography>
-                    <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                    <Typography
+                      sx={{
+                        color: 'text.secondary',
+                        mb: 1.5
+                      }}
+                    >
                       adjective
                     </Typography>
                     <Typography variant="body2">
@@ -112,7 +121,7 @@ function Cards() {
               </CardContent>
             </Card>
           </Grid>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Card>
               <CardHeader title="Complex Example" />
               <Divider />
@@ -141,7 +150,12 @@ function Cards() {
                     title="Paella dish"
                   />
                   <CardContent>
-                    <Typography variant="body2" color="text.secondary">
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        color: 'text.secondary'
+                      }}
+                    >
                       This impressive paella is a perfect party dish and a fun
                       meal to cook together with your guests. Add 1 cup of
                       frozen peas along with the mussels, if you like.
@@ -165,12 +179,26 @@ function Cards() {
                   </CardActions>
                   <Collapse in={expanded} timeout="auto" unmountOnExit>
                     <CardContent>
-                      <Typography paragraph>Method:</Typography>
-                      <Typography paragraph>
+                      <Typography
+                        sx={{
+                          marginBottom: '16px'
+                        }}
+                      >
+                        Method:
+                      </Typography>
+                      <Typography
+                        sx={{
+                          marginBottom: '16px'
+                        }}
+                      >
                         Heat 1/2 cup of the broth in a pot until simmering, add
                         saffron and set aside for 10 minutes.
                       </Typography>
-                      <Typography paragraph>
+                      <Typography
+                        sx={{
+                          marginBottom: '16px'
+                        }}
+                      >
                         Heat oil in a (14- to 16-inch) paella pan or a large,
                         deep skillet over medium-high heat. Add chicken, shrimp
                         and chorizo, and cook, stirring occasionally until
@@ -182,7 +210,11 @@ function Cards() {
                         broth and remaining 4 1/2 cups chicken broth; bring to a
                         boil.
                       </Typography>
-                      <Typography paragraph>
+                      <Typography
+                        sx={{
+                          marginBottom: '16px'
+                        }}
+                      >
                         Add rice and stir very gently to distribute. Top with
                         artichokes and peppers, and cook without stirring, until
                         most of the liquid is absorbed, 15 to 18 minutes. Reduce
@@ -202,7 +234,7 @@ function Cards() {
               </CardContent>
             </Card>
           </Grid>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Card>
               <CardHeader title="Media" />
               <Divider />
@@ -217,7 +249,12 @@ function Cards() {
                     <Typography gutterBottom variant="h5" component="div">
                       Lizard
                     </Typography>
-                    <Typography variant="body2" color="text.secondary">
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        color: 'text.secondary'
+                      }}
+                    >
                       Lizards are a widespread group of squamate reptiles, with
                       over 6,000 species, ranging across all continents except
                       Antarctica

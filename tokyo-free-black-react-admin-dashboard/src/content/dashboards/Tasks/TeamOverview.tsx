@@ -50,9 +50,20 @@ function TeamOverview() {
 
   return (
     <Grid container spacing={4}>
-      <Grid item xs={12} md={4}>
+      <Grid
+        size={{
+          xs: 12,
+          md: 4
+        }}
+      >
         <Box>
-          <Box display="flex" alignItems="center" pb={3}>
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              pb: 3
+            }}
+          >
             <Badge
               anchorOrigin={{
                 vertical: 'bottom',
@@ -106,9 +117,20 @@ function TeamOverview() {
           />
         </Box>
       </Grid>
-      <Grid item xs={12} md={4}>
+      <Grid
+        size={{
+          xs: 12,
+          md: 4
+        }}
+      >
         <Box>
-          <Box display="flex" alignItems="center" pb={3}>
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              pb: 3
+            }}
+          >
             <Badge
               anchorOrigin={{
                 vertical: 'bottom',
@@ -162,9 +184,20 @@ function TeamOverview() {
           />
         </Box>
       </Grid>
-      <Grid item xs={12} md={4}>
+      <Grid
+        size={{
+          xs: 12,
+          md: 4
+        }}
+      >
         <Box>
-          <Box display="flex" alignItems="center" pb={3}>
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              pb: 3
+            }}
+          >
             <Badge
               anchorOrigin={{
                 vertical: 'bottom',

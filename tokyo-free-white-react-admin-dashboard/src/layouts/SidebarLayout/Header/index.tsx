@@ -44,9 +44,9 @@ function Header() {
 
   return (
     <HeaderWrapper
-      display="flex"
-      alignItems="center"
       sx={{
+        display: 'flex',
+        alignItems: 'center',
         boxShadow:
           theme.palette.mode === 'dark'
             ? `0 1px 0 ${alpha(
@@ -65,12 +65,19 @@ function Header() {
       <Stack
         direction="row"
         divider={<Divider orientation="vertical" flexItem />}
-        alignItems="center"
         spacing={2}
+        sx={{
+          alignItems: 'center'
+        }}
       >
         <HeaderMenu />
       </Stack>
-      <Box display="flex" alignItems="center">
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center'
+        }}
+      >
         <HeaderButtons />
         <HeaderUserbox />
         <Box

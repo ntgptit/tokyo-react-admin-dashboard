@@ -40,7 +40,9 @@ interface Filters {
   status?: CryptoOrderStatus;
 }
 
-const getStatusLabel = (cryptoOrderStatus: CryptoOrderStatus): JSX.Element => {
+const getStatusLabel = (
+  cryptoOrderStatus: CryptoOrderStatus
+): React.JSX.Element => {
   const map = {
     failed: {
       text: 'Failed',
@@ -84,7 +86,9 @@ const applyPagination = (
   return cryptoOrders.slice(page * limit, page * limit + limit);
 };
 
-const RecentOrdersTable: FC<RecentOrdersTableProps> = ({ cryptoOrders }) => {
+const RecentOrdersTable: FC<RecentOrdersTableProps> = ({
+  cryptoOrders = []
+}) => {
   const [selectedCryptoOrders, setSelectedCryptoOrders] = useState<string[]>(
     []
   );
@@ -177,14 +181,23 @@ const RecentOrdersTable: FC<RecentOrdersTableProps> = ({ cryptoOrders }) => {
   return (
     <Card>
       {selectedBulkActions && (
-        <Box flex={1} p={2}>
+        <Box
+          sx={{
+            flex: 1,
+            p: 2
+          }}
+        >
           <BulkActions />
         </Box>
       )}
       {!selectedBulkActions && (
         <CardHeader
           action={
-            <Box width={150}>
+            <Box
+              sx={{
+                width: 150
+              }}
+            >
               <FormControl fullWidth variant="outlined">
                 <InputLabel>Status</InputLabel>
                 <Select
@@ -250,24 +263,34 @@ const RecentOrdersTable: FC<RecentOrdersTableProps> = ({ cryptoOrders }) => {
                   <TableCell>
                     <Typography
                       variant="body1"
-                      fontWeight="bold"
-                      color="text.primary"
                       gutterBottom
                       noWrap
+                      sx={{
+                        fontWeight: 'bold',
+                        color: 'text.primary'
+                      }}
                     >
                       {cryptoOrder.orderDetails}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary" noWrap>
+                    <Typography
+                      variant="body2"
+                      noWrap
+                      sx={{
+                        color: 'text.secondary'
+                      }}
+                    >
                       {format(cryptoOrder.orderDate, 'MMMM dd yyyy')}
                     </Typography>
                   </TableCell>
                   <TableCell>
                     <Typography
                       variant="body1"
-                      fontWeight="bold"
-                      color="text.primary"
                       gutterBottom
                       noWrap
+                      sx={{
+                        fontWeight: 'bold',
+                        color: 'text.primary'
+                      }}
                     >
                       {cryptoOrder.orderID}
                     </Typography>
@@ -275,29 +298,45 @@ const RecentOrdersTable: FC<RecentOrdersTableProps> = ({ cryptoOrders }) => {
                   <TableCell>
                     <Typography
                       variant="body1"
-                      fontWeight="bold"
-                      color="text.primary"
                       gutterBottom
                       noWrap
+                      sx={{
+                        fontWeight: 'bold',
+                        color: 'text.primary'
+                      }}
                     >
                       {cryptoOrder.sourceName}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary" noWrap>
+                    <Typography
+                      variant="body2"
+                      noWrap
+                      sx={{
+                        color: 'text.secondary'
+                      }}
+                    >
                       {cryptoOrder.sourceDesc}
                     </Typography>
                   </TableCell>
                   <TableCell align="right">
                     <Typography
                       variant="body1"
-                      fontWeight="bold"
-                      color="text.primary"
                       gutterBottom
                       noWrap
+                      sx={{
+                        fontWeight: 'bold',
+                        color: 'text.primary'
+                      }}
                     >
                       {cryptoOrder.amountCrypto}
                       {cryptoOrder.cryptoCurrency}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary" noWrap>
+                    <Typography
+                      variant="body2"
+                      noWrap
+                      sx={{
+                        color: 'text.secondary'
+                      }}
+                    >
                       {numeral(cryptoOrder.amount).format(
                         `${cryptoOrder.currency}0,0.00`
                       )}
@@ -340,7 +379,11 @@ const RecentOrdersTable: FC<RecentOrdersTableProps> = ({ cryptoOrders }) => {
           </TableBody>
         </Table>
       </TableContainer>
-      <Box p={2}>
+      <Box
+        sx={{
+          p: 2
+        }}
+      >
         <TablePagination
           component="div"
           count={filteredCryptoOrders.length}
@@ -357,10 +400,6 @@ const RecentOrdersTable: FC<RecentOrdersTableProps> = ({ cryptoOrders }) => {
 
 RecentOrdersTable.propTypes = {
   cryptoOrders: PropTypes.array.isRequired
-};
-
-RecentOrdersTable.defaultProps = {
-  cryptoOrders: []
 };
 
 export default RecentOrdersTable;

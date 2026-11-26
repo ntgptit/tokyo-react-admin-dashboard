@@ -8,8 +8,14 @@ function PageHeader() {
     avatar: '/static/images/avatars/1.jpg'
   };
   return (
-    <Grid container justifyContent="space-between" alignItems="center">
-      <Grid item>
+    <Grid
+      container
+      sx={{
+        justifyContent: 'space-between',
+        alignItems: 'center'
+      }}
+    >
+      <Grid>
         <Typography variant="h3" component="h3" gutterBottom>
           Transactions
         </Typography>
@@ -17,7 +23,7 @@ function PageHeader() {
           {user.name}, these are your recent transactions
         </Typography>
       </Grid>
-      <Grid item>
+      <Grid>
         <Button
           sx={{ mt: { xs: 2, md: 0 } }}
           variant="contained"

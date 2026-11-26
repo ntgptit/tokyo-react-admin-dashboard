@@ -93,38 +93,64 @@ function MyCards() {
     setSelectedValue(event.target.value);
   };
 
-  const handleDelete = () => { };
+  const handleDelete = () => {};
 
   return (
     <Card>
       <CardHeader subheader={data.savedCards + ' saved cards'} title="Cards" />
       <Divider />
-      <Box p={3}>
+      <Box
+        sx={{
+          p: 3
+        }}
+      >
         <Grid container spacing={3}>
-          <Grid item xs={12} sm={6}>
+          <Grid
+            size={{
+              xs: 12,
+              sm: 6
+            }}
+          >
             <CardCc sx={{ px: 2, pt: 2, pb: 1 }}>
-              <Box display="flex" alignItems="center">
+              <Box
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center'
+                }}
+              >
                 <CardLogo
                   src="/static/images/placeholders/logo/visa.png"
                   alt="Visa"
                 />
                 <Box>
-                  <Typography variant="h3" fontWeight="normal">
+                  <Typography
+                    variant="h3"
+                    sx={{
+                      fontWeight: 'normal'
+                    }}
+                  >
                     •••• 6879
                   </Typography>
                   <Typography variant="subtitle2">
                     Expires:{' '}
-                    <Typography component="span" color="text.primary">
+                    <Typography
+                      component="span"
+                      sx={{
+                        color: 'text.primary'
+                      }}
+                    >
                       12/24
                     </Typography>
                   </Typography>
                 </Box>
               </Box>
               <Box
-                pt={3}
-                display="flex"
-                alignItems="center"
-                justifyContent="space-between"
+                sx={{
+                  pt: 3,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between'
+                }}
               >
                 <FormControlLabel
                   value="a"
@@ -147,30 +173,52 @@ function MyCards() {
               </Box>
             </CardCc>
           </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid
+            size={{
+              xs: 12,
+              sm: 6
+            }}
+          >
             <CardCc sx={{ px: 2, pt: 2, pb: 1 }}>
-              <Box display="flex" alignItems="center">
+              <Box
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center'
+                }}
+              >
                 <CardLogo
                   src="/static/images/placeholders/logo/mastercard.png"
                   alt="Visa"
                 />
                 <Box>
-                  <Typography variant="h3" fontWeight="normal">
+                  <Typography
+                    variant="h3"
+                    sx={{
+                      fontWeight: 'normal'
+                    }}
+                  >
                     •••• 4634
                   </Typography>
                   <Typography variant="subtitle2">
                     Expires:{' '}
-                    <Typography component="span" color="text.primary">
+                    <Typography
+                      component="span"
+                      sx={{
+                        color: 'text.primary'
+                      }}
+                    >
                       6/22
                     </Typography>
                   </Typography>
                 </Box>
               </Box>
               <Box
-                pt={3}
-                display="flex"
-                alignItems="center"
-                justifyContent="space-between"
+                sx={{
+                  pt: 3,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between'
+                }}
               >
                 <FormControlLabel
                   value="b"
@@ -193,7 +241,12 @@ function MyCards() {
               </Box>
             </CardCc>
           </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid
+            size={{
+              xs: 12,
+              sm: 6
+            }}
+          >
             <Tooltip arrow title="Click to add a new card">
               <CardAddAction>
                 <CardActionArea sx={{ px: 1 }}>
