@@ -61,7 +61,8 @@ function Status500() {
           spacing={0}
           sx={{
             alignItems: 'stretch',
-            height: '100%'
+            height: '100%',
+            width: '100%'
           }}
         >
           <Grid

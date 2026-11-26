@@ -27,8 +27,10 @@ import AccountTreeTwoToneIcon from '@mui/icons-material/AccountTreeTwoTone';
 
 const UserBoxButton = styled(Button)(
   ({ theme }) => `
-        padding-left: ${theme.spacing(1)};
-        padding-right: ${theme.spacing(1)};
+        && {
+          padding-left: ${theme.spacing(1)};
+          padding-right: ${theme.spacing(1)};
+        }
 `
 );
 

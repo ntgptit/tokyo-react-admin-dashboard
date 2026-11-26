@@ -18,7 +18,7 @@ const ListWrapper = styled(Box)(
             display: none;
         }
         
-        .MuiListItem-root {
+        .MuiListItemButton-root {
             transition: ${theme.transitions.create(['color', 'fill'])};
             
             &.MuiListItem-indicators {

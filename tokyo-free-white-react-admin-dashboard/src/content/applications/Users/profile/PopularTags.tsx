@@ -16,7 +16,7 @@ import {
 
 const ListWrapper = styled(List)(
   () => `
-      .MuiListItem-root {
+      .MuiListItemButton-root {
         border-radius: 0;
         margin: 0;
       }

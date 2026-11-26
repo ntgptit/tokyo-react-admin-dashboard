@@ -434,7 +434,7 @@ export const NebulaFighterTheme = createTheme({
         icon: {
           top: 'calc(50% - 14px)',
 
-          '.MuiOutlinedInput-root &': {
+          ':where(.MuiOutlinedInput-root) &': {
             color: colors.alpha.black[50]
           }
         }
@@ -562,7 +562,7 @@ export const NebulaFighterTheme = createTheme({
           transition: 'all .2s'
         },
         root: {
-          '&.MuiPaginationItem-text.MuiPaginationItem-colorPrimary': {
+          '&:where(.MuiPaginationItem-text.MuiPaginationItem-colorPrimary)': {
             '&.Mui-selected': {
               boxShadow: colors.shadows.primary
             },
@@ -591,12 +591,12 @@ export const NebulaFighterTheme = createTheme({
             transition: 'all .2s'
           },
 
-          '&.MuiButton-contained.MuiButton-colorSecondary': {
+          '&:where(.MuiButton-contained.MuiButton-colorSecondary)': {
             backgroundColor: colors.secondary.main,
             color: colors.alpha.white[100],
             border: '1px solid ' + colors.alpha.black[30]
           },
-          '&.MuiButton-outlined.MuiButton-colorSecondary': {
+          '&:where(.MuiButton-outlined.MuiButton-colorSecondary)': {
             backgroundColor: colors.alpha.white[100],
 
             '&:hover, &.MuiSelected': {
@@ -604,13 +604,13 @@ export const NebulaFighterTheme = createTheme({
               color: colors.alpha.black[100]
             }
           },
-          '&.MuiButton-text.MuiButton-sizeSmall': {
+          '&:where(.MuiButton-text.MuiButton-sizeSmall)': {
             padding: '7px 12px'
           },
-          '&.MuiButton-text.MuiButton-sizeMedium': {
+          '&:where(.MuiButton-text.MuiButton-sizeMedium)': {
             padding: '9px 16px'
           },
-          '&.MuiButton-text.MuiButton-sizeLarge': {
+          '&:where(.MuiButton-text.MuiButton-sizeLarge)': {
             padding: '12px 16px'
           }
         },
@@ -787,7 +787,7 @@ export const NebulaFighterTheme = createTheme({
               opacity: 0.2
             }
           },
-          '& .MuiListItem-root.MuiButtonBase-root.Mui-selected': {
+          '& .MuiListItemButton-root.Mui-selected': {
             backgroundColor: colors.alpha.black[10]
           },
           '& .MuiMenuItem-root.MuiButtonBase-root:active': {
@@ -909,6 +909,20 @@ export const NebulaFighterTheme = createTheme({
         }
       }
     },
+    MuiListItemButton: {
+      styleOverrides: {
+        root: {
+          '&.MuiButtonBase-root': {
+            color: colors.secondary.main,
+
+            '&:hover, &:active, &.active, &.Mui-selected': {
+              color: colors.alpha.black[100],
+              background: alpha(colors.primary.lighter, 0.2)
+            }
+          }
+        }
+      }
+    },
     MuiAutocomplete: {
       styleOverrides: {
         tag: {
@@ -995,7 +1009,7 @@ export const NebulaFighterTheme = createTheme({
           fontSize: 14
         },
         root: {
-          '&.MuiAlert-standard.MuiAlert-colorInfo': {
+          '&:where(.MuiAlert-standard.MuiAlert-colorInfo)': {
             color: colors.info.main
           }
         },
