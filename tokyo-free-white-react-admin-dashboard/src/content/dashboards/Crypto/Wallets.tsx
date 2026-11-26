@@ -1,244 +1,89 @@
+import { Plus } from 'lucide-react';
+import { Button } from 'src/components/ui/button';
+import { Card, CardContent } from 'src/components/ui/card';
 import {
-  Button,
-  Card,
-  Grid,
-  Box,
-  CardContent,
-  Typography,
-  Avatar,
-  alpha,
   Tooltip,
-  CardActionArea,
-  styled
-} from '@mui/material';
-import AddTwoToneIcon from '@mui/icons-material/AddTwoTone';
+  TooltipContent,
+  TooltipTrigger
+} from 'src/components/ui/tooltip';
+import CoinAvatar from './CoinAvatar';
 
-const AvatarWrapper = styled(Avatar)(
-  ({ theme }) => `
-    margin: ${theme.spacing(2, 0, 1, -0.5)};
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: ${theme.spacing(1)};
-    padding: ${theme.spacing(0.5)};
-    border-radius: 60px;
-    height: ${theme.spacing(5.5)};
-    width: ${theme.spacing(5.5)};
-    background: ${
-      theme.palette.mode === 'dark'
-        ? theme.colors.alpha.trueWhite[30]
-        : alpha(theme.colors.alpha.black[100], 0.07)
-    };
-  
-    img {
-      background: ${theme.colors.alpha.trueWhite[100]};
-      padding: ${theme.spacing(0.5)};
-      display: block;
-      border-radius: inherit;
-      height: ${theme.spacing(4.5)};
-      width: ${theme.spacing(4.5)};
-    }
-`
-);
-
-const AvatarAddWrapper = styled(Avatar)(
-  ({ theme }) => `
-        background: ${theme.colors.alpha.black[10]};
-        color: ${theme.colors.primary.main};
-        width: ${theme.spacing(8)};
-        height: ${theme.spacing(8)};
-`
-);
-
-const CardAddAction = styled(Card)(
-  ({ theme }) => `
-        border: ${theme.colors.primary.main} dashed 1px;
-        height: 100%;
-        color: ${theme.colors.primary.main};
-        transition: ${theme.transitions.create(['all'])};
-        
-        .MuiCardActionArea-root {
-          height: 100%;
-          justify-content: center;
-          align-items: center;
-          display: flex;
-        }
-        
-        .MuiTouchRipple-root {
-          opacity: .2;
-        }
-        
-        &:hover {
-          border-color: ${theme.colors.alpha.black[70]};
-        }
-`
-);
+const wallets = [
+  {
+    name: 'Bitcoin',
+    symbol: 'BTC',
+    logo: 'bitcoin',
+    value: '$3,586.22',
+    amount: '1.25843 BTC'
+  },
+  {
+    name: 'Ripple',
+    symbol: 'XRP',
+    logo: 'ripple',
+    value: '$586.83',
+    amount: '5,783 XRP'
+  },
+  {
+    name: 'Cardano',
+    symbol: 'ADA',
+    logo: 'cardano',
+    value: '$54,985.00',
+    amount: '34,985 ADA'
+  }
+];
 
 function Wallets() {
   return (
     <>
-      <Box
-        sx={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          pb: 3
-        }}
-      >
-        <Typography variant="h3">Wallets</Typography>
+      <div className="flex items-center justify-between pb-[27px]">
+        <h3 className="text-h3">Wallets</h3>
         <Button
-          size="small"
-          variant="outlined"
-          startIcon={<AddTwoToneIcon fontSize="small" />}
+          variant="outline"
+          className="h-auto gap-[8px] rounded-md border-primary/50 bg-transparent px-[10px] py-[3px] text-[13px] leading-[1.7] font-bold text-primary shadow-none hover:bg-primary/5 hover:text-primary"
         >
+          <Plus className="size-5" />
           Add new wallet
         </Button>
-      </Box>
-      <Grid container spacing={3}>
-        <Grid
-          size={{
-            xs: 12,
-            sm: 6,
-            md: 3
-          }}
-        >
+      </div>
+      <div className="grid grid-cols-1 gap-6.75 sm:grid-cols-2 md:grid-cols-4">
+        {wallets.map((w) => (
           <Card
-            sx={{
-              px: 1
-            }}
+            key={w.symbol}
+            className="gap-0 rounded-[10px] border-0 px-[9px] py-0 shadow-card"
           >
-            <CardContent>
-              <AvatarWrapper>
-                <img
-                  alt="BTC"
-                  src="/static/images/placeholders/logo/bitcoin.png"
-                />
-              </AvatarWrapper>
-              <Typography variant="h5" noWrap>
-                Bitcoin
-              </Typography>
-              <Typography variant="subtitle1" noWrap>
-                BTC
-              </Typography>
-              <Box
-                sx={{
-                  pt: 3
-                }}
-              >
-                <Typography variant="h3" gutterBottom noWrap>
-                  $3,586.22
-                </Typography>
-                <Typography variant="subtitle2" noWrap>
-                  1.25843 BTC
-                </Typography>
-              </Box>
+            <CardContent className="p-[16px] pb-[24px]">
+              <CoinAvatar
+                className="mt-[18px] mb-[9px] -ml-[4.5px]"
+                alt={w.symbol}
+                src={`/static/images/placeholders/logo/${w.logo}.png`}
+              />
+              <h5 className="text-h5 truncate">{w.name}</h5>
+              <p className="text-subtitle1 truncate">{w.symbol}</p>
+              <div className="pt-[27px]">
+                <h3 className="text-h3 mb-[0.35em] truncate">{w.value}</h3>
+                <p className="text-subtitle2 truncate">{w.amount}</p>
+              </div>
             </CardContent>
           </Card>
-        </Grid>
-        <Grid
-          size={{
-            xs: 12,
-            sm: 6,
-            md: 3
-          }}
-        >
-          <Card
-            sx={{
-              px: 1
-            }}
-          >
-            <CardContent>
-              <AvatarWrapper>
-                <img
-                  alt="Ripple"
-                  src="/static/images/placeholders/logo/ripple.png"
-                />
-              </AvatarWrapper>
-              <Typography variant="h5" noWrap>
-                Ripple
-              </Typography>
-              <Typography variant="subtitle1" noWrap>
-                XRP
-              </Typography>
-              <Box
-                sx={{
-                  pt: 3
-                }}
+        ))}
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Card className="h-full gap-0 rounded-[10px] border border-dashed border-primary bg-card py-0 text-primary shadow-card transition-all hover:border-ink/70">
+              <button
+                type="button"
+                className="flex h-full w-full cursor-pointer items-center justify-center px-[9px] outline-none hover:bg-primary/5"
               >
-                <Typography variant="h3" gutterBottom noWrap>
-                  $586.83
-                </Typography>
-                <Typography variant="subtitle2" noWrap>
-                  5,783 XRP
-                </Typography>
-              </Box>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid
-          size={{
-            xs: 12,
-            sm: 6,
-            md: 3
-          }}
-        >
-          <Card
-            sx={{
-              px: 1
-            }}
-          >
-            <CardContent>
-              <AvatarWrapper>
-                <img
-                  alt="Cardano"
-                  src="/static/images/placeholders/logo/cardano.png"
-                />
-              </AvatarWrapper>
-              <Typography variant="h5" noWrap>
-                Cardano
-              </Typography>
-              <Typography variant="subtitle1" noWrap>
-                ADA
-              </Typography>
-              <Box
-                sx={{
-                  pt: 3
-                }}
-              >
-                <Typography variant="h3" gutterBottom noWrap>
-                  $54,985.00
-                </Typography>
-                <Typography variant="subtitle2" noWrap>
-                  34,985 ADA
-                </Typography>
-              </Box>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid
-          size={{
-            xs: 12,
-            sm: 6,
-            md: 3
-          }}
-        >
-          <Tooltip arrow title="Click to add a new wallet">
-            <CardAddAction>
-              <CardActionArea
-                sx={{
-                  px: 1
-                }}
-              >
-                <CardContent>
-                  <AvatarAddWrapper>
-                    <AddTwoToneIcon fontSize="large" />
-                  </AvatarAddWrapper>
+                <CardContent className="p-[16px] pb-[24px]">
+                  <span className="flex size-[72px] items-center justify-center rounded-full bg-ink/10 text-primary">
+                    <Plus className="size-[35px]" />
+                  </span>
                 </CardContent>
-              </CardActionArea>
-            </CardAddAction>
-          </Tooltip>
-        </Grid>
-      </Grid>
+              </button>
+            </Card>
+          </TooltipTrigger>
+          <TooltipContent side="top">Click to add a new wallet</TooltipContent>
+        </Tooltip>
+      </div>
     </>
   );
 }

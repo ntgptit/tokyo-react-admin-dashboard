@@ -1,7 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import PageHeader from './PageHeader';
 import PageTitleWrapper from 'src/components/PageTitleWrapper';
-import { Container, Grid } from '@mui/material';
 import Footer from 'src/components/Footer';
 
 import AccountBalance from './AccountBalance';
@@ -18,40 +17,22 @@ function DashboardCrypto() {
       <PageTitleWrapper>
         <PageHeader />
       </PageTitleWrapper>
-      <Container maxWidth="lg">
-        <Grid
-          container
-          direction="row"
-          spacing={4}
-          sx={{
-            justifyContent: 'center',
-            alignItems: 'stretch'
-          }}
-        >
-          <Grid size={12}>
+      <div className="mx-auto w-full max-w-[1280px] px-[18px] sm:px-[24px]">
+        <div className="grid grid-cols-12 items-stretch gap-9">
+          <div className="col-span-12">
             <AccountBalance />
-          </Grid>
-          <Grid
-            size={{
-              lg: 8,
-              xs: 12
-            }}
-          >
+          </div>
+          <div className="col-span-12 lg:col-span-8">
             <Wallets />
-          </Grid>
-          <Grid
-            size={{
-              lg: 4,
-              xs: 12
-            }}
-          >
+          </div>
+          <div className="col-span-12 lg:col-span-4">
             <AccountSecurity />
-          </Grid>
-          <Grid size={12}>
+          </div>
+          <div className="col-span-12">
             <WatchList />
-          </Grid>
-        </Grid>
-      </Container>
+          </div>
+        </div>
+      </div>
       <Footer />
     </>
   );

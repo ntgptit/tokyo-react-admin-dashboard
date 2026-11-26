@@ -1,41 +1,23 @@
-import { Typography, Avatar, Grid } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
+import { Avatar, AvatarImage } from 'src/components/ui/avatar';
 
 function PageHeader() {
   const user = {
     name: 'Catherine Pike',
     avatar: '/static/images/avatars/1.jpg'
   };
-  const theme = useTheme();
 
   return (
-    <Grid
-      container
-      sx={{
-        alignItems: 'center'
-      }}
-    >
-      <Grid>
-        <Avatar
-          sx={{
-            mr: 2,
-            width: theme.spacing(8),
-            height: theme.spacing(8)
-          }}
-          variant="rounded"
-          alt={user.name}
-          src={user.avatar}
-        />
-      </Grid>
-      <Grid>
-        <Typography variant="h3" component="h3" gutterBottom>
-          Welcome, {user.name}!
-        </Typography>
-        <Typography variant="subtitle2">
+    <div className="flex items-center">
+      <Avatar className="mr-[18px] size-[72px] rounded-[10px]">
+        <AvatarImage alt={user.name} src={user.avatar} />
+      </Avatar>
+      <div>
+        <h3 className="text-h3 mb-[0.35em]">Welcome, {user.name}!</h3>
+        <p className="text-subtitle2">
           Today is a good day to start trading crypto assets!
-        </Typography>
-      </Grid>
-    </Grid>
+        </p>
+      </div>
+    </div>
   );
 }
 
