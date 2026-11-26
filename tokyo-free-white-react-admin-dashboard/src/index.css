@@ -1,0 +1,236 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --radius: 0.625rem;
+  --background: #f2f5f9;
+  --foreground: #223354;
+  --card: #ffffff;
+  --card-foreground: #223354;
+  --popover: #ffffff;
+  --popover-foreground: #223354;
+  --primary-foreground: #ffffff;
+  --secondary-foreground: #ffffff;
+  --muted: #f2f5f9;
+  --muted-foreground: #6e759f;
+  --accent: #f2f5f9;
+  --accent-foreground: #223354;
+  --destructive: #ff1943;
+  --border: rgba(34, 51, 84, 0.1);
+  --input: rgba(34, 51, 84, 0.3);
+  --ring: #5569ff;
+  --ink: #223354;
+  --sidebar-width: 290px;
+  --shadow-card: 0px 9px 16px rgba(159, 162, 191, 0.18), 0px 2px 2px rgba(159, 162, 191, 0.32);
+  --shadow-card-sm: 0px 2px 3px rgba(159, 162, 191, 0.18), 0px 1px 1px rgba(159, 162, 191, 0.32);
+  --shadow-primary: 0px 1px 4px rgba(85, 105, 255, 0.25), 0px 3px 12px 2px rgba(85, 105, 255, 0.35);
+  --shadow-success: 0px 1px 4px rgba(68, 214, 0, 0.25), 0px 3px 12px 2px rgba(68, 214, 0, 0.35);
+  --shadow-error: 0px 1px 4px rgba(255, 25, 67, 0.25), 0px 3px 12px 2px rgba(255, 25, 67, 0.35);
+  --shadow-info: 0px 1px 4px rgba(51, 194, 255, 0.25), 0px 3px 12px 2px rgba(51, 194, 255, 0.35);
+  --shadow-warning: 0px 1px 4px rgba(255, 163, 25, 0.25), 0px 3px 12px 2px rgba(255, 163, 25, 0.35);
+  --primary: #5569ff;
+  --primary-lighter: #e6e8ff;
+  --primary-light: #8896ff;
+  --primary-dark: #4454cc;
+  --secondary: #6E759F;
+  --secondary-lighter: #e9eaf1;
+  --secondary-light: #9298b7;
+  --secondary-dark: #585e7f;
+  --success: #57CA22;
+  --success-lighter: #e6f7de;
+  --success-light: #89da64;
+  --success-dark: #46a21b;
+  --warning: #FFA319;
+  --warning-lighter: #fff1dc;
+  --warning-light: #ffbf5e;
+  --warning-dark: #cc8214;
+  --error: #FF1943;
+  --error-lighter: #ffdce3;
+  --error-light: #ff5e7b;
+  --error-dark: #cc1436;
+  --info: #33C2FF;
+  --info-lighter: #e0f6ff;
+  --info-light: #70d4ff;
+  --info-dark: #299bcc;
+}
+
+@theme inline {
+  --breakpoint-sm: 600px;
+  --breakpoint-md: 960px;
+  --breakpoint-lg: 1280px;
+  --breakpoint-xl: 1840px;
+  --breakpoint-2xl: 2400px;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ink: var(--ink);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+  --color-info: var(--info);
+  --color-primary-lighter: var(--primary-lighter);
+  --color-primary-light: var(--primary-light);
+  --color-primary-dark: var(--primary-dark);
+  --color-secondary-lighter: var(--secondary-lighter);
+  --color-secondary-light: var(--secondary-light);
+  --color-secondary-dark: var(--secondary-dark);
+  --color-success-lighter: var(--success-lighter);
+  --color-success-light: var(--success-light);
+  --color-success-dark: var(--success-dark);
+  --color-warning-lighter: var(--warning-lighter);
+  --color-warning-light: var(--warning-light);
+  --color-warning-dark: var(--warning-dark);
+  --color-error-lighter: var(--error-lighter);
+  --color-error-light: var(--error-light);
+  --color-error-dark: var(--error-dark);
+  --color-info-lighter: var(--info-lighter);
+  --color-info-light: var(--info-light);
+  --color-info-dark: var(--info-dark);
+  --color-sidebar: #111633;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --shadow-card: var(--shadow-card);
+  --shadow-card-sm: var(--shadow-card-sm);
+  --shadow-primary: var(--shadow-primary);
+  --shadow-success: var(--shadow-success);
+  --shadow-error: var(--shadow-error);
+  --shadow-info: var(--shadow-info);
+  --shadow-warning: var(--shadow-warning);
+}
+
+@utility text-h1 {
+  font-size: 35px;
+  font-weight: 700;
+  line-height: 1.167;
+  letter-spacing: -0.01562em;
+}
+
+@utility text-h2 {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.00833em;
+}
+
+@utility text-h3 {
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0;
+  color: #223354;
+}
+
+@utility text-h4 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.235;
+  letter-spacing: 0.00735em;
+}
+
+@utility text-h5 {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.334;
+  letter-spacing: 0;
+}
+
+@utility text-h6 {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.0075em;
+}
+
+@utility text-subtitle1 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.75;
+  letter-spacing: 0.00938em;
+  color: rgba(34, 51, 84, 0.7);
+}
+
+@utility text-subtitle2 {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.57;
+  letter-spacing: 0.00714em;
+  color: rgba(34, 51, 84, 0.7);
+}
+
+@utility text-body1 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.00938em;
+}
+
+@utility text-body2 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.43;
+  letter-spacing: 0.01071em;
+}
+
+@utility text-caption {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.66;
+  letter-spacing: 0.03333em;
+  text-transform: uppercase;
+  color: rgba(34, 51, 84, 0.5);
+}
+
+@utility text-overline {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 2.66;
+  letter-spacing: 0.08333em;
+  text-transform: uppercase;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    font-size: 16px;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+  #root {
+    min-height: 100vh;
+  }
+  #nprogress .bar {
+    background: var(--primary);
+  }
+  #nprogress .spinner-icon {
+    border-top-color: var(--primary);
+    border-left-color: var(--primary);
+  }
+  #nprogress .peg {
+    box-shadow: 0 0 10px var(--primary), 0 0 5px var(--primary);
+  }
+}
