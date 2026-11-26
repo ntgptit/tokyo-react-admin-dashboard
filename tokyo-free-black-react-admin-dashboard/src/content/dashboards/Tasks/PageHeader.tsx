@@ -42,12 +42,19 @@ function PageHeader() {
 
   return (
     <Box
-      display="flex"
-      alignItems={{ xs: 'stretch', md: 'center' }}
-      flexDirection={{ xs: 'column', md: 'row' }}
-      justifyContent="space-between"
+      sx={{
+        display: 'flex',
+        alignItems: { xs: 'stretch', md: 'center' },
+        flexDirection: { xs: 'column', md: 'row' },
+        justifyContent: 'space-between'
+      }}
     >
-      <Box display="flex" alignItems="center">
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center'
+        }}
+      >
         <AvatarPageTitle variant="rounded">
           <AddAlertTwoToneIcon fontSize="large" />
         </AvatarPageTitle>
@@ -61,7 +68,11 @@ function PageHeader() {
           </Typography>
         </Box>
       </Box>
-      <Box mt={{ xs: 3, md: 0 }}>
+      <Box
+        sx={{
+          mt: { xs: 3, md: 0 }
+        }}
+      >
         <Button variant="contained" startIcon={<DocumentScannerTwoToneIcon />}>
           Export
         </Button>

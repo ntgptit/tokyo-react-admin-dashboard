@@ -10,6 +10,7 @@ import {
   lighten,
   List,
   ListItem,
+  ListItemButton,
   ListItemAvatar,
   TextField,
   Theme,
@@ -19,7 +20,8 @@ import {
   DialogContent,
   DialogTitle,
   Slide,
-  Hidden
+  useMediaQuery,
+  useTheme
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { TransitionProps } from '@mui/material/transitions';
@@ -65,6 +67,8 @@ const DialogTitleWrapper = styled(DialogTitle)(
 );
 
 function HeaderSearch() {
+  const theme = useTheme();
+  const isSmDown = useMediaQuery(theme.breakpoints.down('md'));
   const [openSearchResults, setOpenSearchResults] = useState(false);
   const [searchValue, setSearchValue] = useState('');
 
@@ -100,7 +104,7 @@ function HeaderSearch() {
 
       <DialogWrapper
         open={open}
-        TransitionComponent={Transition}
+        slots={{ transition: Transition }}
         keepMounted
         maxWidth="md"
         fullWidth
@@ -112,12 +116,14 @@ function HeaderSearch() {
             value={searchValue}
             autoFocus={true}
             onChange={handleSearchChange}
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <SearchTwoToneIcon />
-                </InputAdornment>
-              )
+            slotProps={{
+              input: {
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <SearchTwoToneIcon />
+                  </InputAdornment>
+                )
+              }
             }}
             placeholder="Search terms here..."
             fullWidth
@@ -129,9 +135,12 @@ function HeaderSearch() {
         {openSearchResults && (
           <DialogContent>
             <Box
-              sx={{ pt: 0, pb: 1 }}
-              display="flex"
-              justifyContent="space-between"
+              sx={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                pt: 0,
+                pb: 1
+              }}
             >
               <Typography variant="body2" component="span">
                 Search results for{' '}
@@ -149,21 +158,32 @@ function HeaderSearch() {
             </Box>
             <Divider sx={{ my: 1 }} />
             <List disablePadding>
-              <ListItem button>
-                <Hidden smDown>
-                  <ListItemAvatar>
-                    <Avatar
-                      sx={{
-                        background: (theme: Theme) =>
-                          theme.palette.secondary.main
-                      }}
-                    >
-                      <FindInPageTwoToneIcon />
-                    </Avatar>
-                  </ListItemAvatar>
-                </Hidden>
-                <Box flex="1">
-                  <Box display="flex" justifyContent="space-between">
+              <ListItemButton>
+                {!isSmDown && (
+                  <>
+                    <ListItemAvatar>
+                      <Avatar
+                        sx={{
+                          background: (theme: Theme) =>
+                            theme.palette.secondary.main
+                        }}
+                      >
+                        <FindInPageTwoToneIcon />
+                      </Avatar>
+                    </ListItemAvatar>
+                  </>
+                )}
+                <Box
+                  sx={{
+                    flex: '1'
+                  }}
+                >
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      justifyContent: 'space-between'
+                    }}
+                  >
                     <Link
                       href="#"
                       underline="hover"
@@ -186,23 +206,34 @@ function HeaderSearch() {
                   </Typography>
                 </Box>
                 <ChevronRightTwoToneIcon />
-              </ListItem>
+              </ListItemButton>
               <Divider sx={{ my: 1 }} component="li" />
-              <ListItem button>
-                <Hidden smDown>
-                  <ListItemAvatar>
-                    <Avatar
-                      sx={{
-                        background: (theme: Theme) =>
-                          theme.palette.secondary.main
-                      }}
-                    >
-                      <FindInPageTwoToneIcon />
-                    </Avatar>
-                  </ListItemAvatar>
-                </Hidden>
-                <Box flex="1">
-                  <Box display="flex" justifyContent="space-between">
+              <ListItemButton>
+                {!isSmDown && (
+                  <>
+                    <ListItemAvatar>
+                      <Avatar
+                        sx={{
+                          background: (theme: Theme) =>
+                            theme.palette.secondary.main
+                        }}
+                      >
+                        <FindInPageTwoToneIcon />
+                      </Avatar>
+                    </ListItemAvatar>
+                  </>
+                )}
+                <Box
+                  sx={{
+                    flex: '1'
+                  }}
+                >
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      justifyContent: 'space-between'
+                    }}
+                  >
                     <Link
                       href="#"
                       underline="hover"
@@ -224,23 +255,34 @@ function HeaderSearch() {
                   </Typography>
                 </Box>
                 <ChevronRightTwoToneIcon />
-              </ListItem>
+              </ListItemButton>
               <Divider sx={{ my: 1 }} component="li" />
-              <ListItem button>
-                <Hidden smDown>
-                  <ListItemAvatar>
-                    <Avatar
-                      sx={{
-                        background: (theme: Theme) =>
-                          theme.palette.secondary.main
-                      }}
-                    >
-                      <FindInPageTwoToneIcon />
-                    </Avatar>
-                  </ListItemAvatar>
-                </Hidden>
-                <Box flex="1">
-                  <Box display="flex" justifyContent="space-between">
+              <ListItemButton>
+                {!isSmDown && (
+                  <>
+                    <ListItemAvatar>
+                      <Avatar
+                        sx={{
+                          background: (theme: Theme) =>
+                            theme.palette.secondary.main
+                        }}
+                      >
+                        <FindInPageTwoToneIcon />
+                      </Avatar>
+                    </ListItemAvatar>
+                  </>
+                )}
+                <Box
+                  sx={{
+                    flex: '1'
+                  }}
+                >
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      justifyContent: 'space-between'
+                    }}
+                  >
                     <Link
                       href="#"
                       underline="hover"
@@ -263,7 +305,7 @@ function HeaderSearch() {
                   </Typography>
                 </Box>
                 <ChevronRightTwoToneIcon />
-              </ListItem>
+              </ListItemButton>
             </List>
             <Divider sx={{ mt: 1, mb: 2 }} />
             <Box sx={{ textAlign: 'center' }}>

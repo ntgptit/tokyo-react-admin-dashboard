@@ -15,7 +15,7 @@ import {
 import Button from '@mui/material/Button';
 import Avatar from '@mui/material/Avatar';
 import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import ListItemText from '@mui/material/ListItemText';
 import DialogTitle from '@mui/material/DialogTitle';
@@ -44,8 +44,7 @@ function SimpleDialog(props) {
       <DialogTitle>Set backup account</DialogTitle>
       <List sx={{ pt: 0 }}>
         {emails.map((email) => (
-          <ListItem
-            button
+          <ListItemButton
             onClick={() => handleListItemClick(email)}
             key={email}
           >
@@ -55,12 +54,12 @@ function SimpleDialog(props) {
               </Avatar>
             </ListItemAvatar>
             <ListItemText primary={email} />
-          </ListItem>
+          </ListItemButton>
         ))}
 
-        <ListItem
+        <ListItemButton
           autoFocus
-          button
+
           onClick={() => handleListItemClick('addAccount')}
         >
           <ListItemAvatar>
@@ -69,7 +68,7 @@ function SimpleDialog(props) {
             </Avatar>
           </ListItemAvatar>
           <ListItemText primary="Add account" />
-        </ListItem>
+        </ListItemButton>
       </List>
     </Dialog>
   );
@@ -110,11 +109,13 @@ function Modals() {
         <Grid
           container
           direction="row"
-          justifyContent="center"
-          alignItems="stretch"
           spacing={3}
+          sx={{
+            justifyContent: 'center',
+            alignItems: 'stretch'
+          }}
         >
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Card>
               <CardHeader title="Basic Dialog" />
               <Divider />

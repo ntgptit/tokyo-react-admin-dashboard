@@ -147,61 +147,97 @@ function DashboardTasks() {
           <Grid
             container
             direction="row"
-            justifyContent="center"
-            alignItems="stretch"
             spacing={0}
+            sx={{
+              justifyContent: 'center',
+              alignItems: 'stretch'
+            }}
           >
             {currentTab === 'analytics' && (
               <>
-                <Grid item xs={12}>
-                  <Box p={4}>
+                <Grid size={12}>
+                  <Box
+                    sx={{
+                      p: 4
+                    }}
+                  >
                     <TeamOverview />
                   </Box>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Divider />
                   <Box
-                    p={4}
                     sx={{
+                      p: 4,
                       background: `${theme.colors.alpha.black[5]}`
                     }}
                   >
                     <Grid container spacing={4}>
-                      <Grid item xs={12} sm={6} md={8}>
+                      <Grid
+                        size={{
+                          xs: 12,
+                          sm: 6,
+                          md: 8
+                        }}
+                      >
                         <TasksAnalytics />
                       </Grid>
-                      <Grid item xs={12} sm={6} md={4}>
+                      <Grid
+                        size={{
+                          xs: 12,
+                          sm: 6,
+                          md: 4
+                        }}
+                      >
                         <Performance />
                       </Grid>
                     </Grid>
                   </Box>
                   <Divider />
                 </Grid>
-                <Grid item xs={12}>
-                  <Box p={4}>
+                <Grid size={12}>
+                  <Box
+                    sx={{
+                      p: 4
+                    }}
+                  >
                     <Projects />
                   </Box>
                   <Divider />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Box
                     sx={{
                       background: `${theme.colors.alpha.black[5]}`
                     }}
                   >
                     <Grid container spacing={0}>
-                      <Grid item xs={12} md={6}>
+                      <Grid
+                        size={{
+                          xs: 12,
+                          md: 6
+                        }}
+                      >
                         <Box
-                          p={4}
                           sx={{
+                            p: 4,
                             background: `${theme.colors.alpha.white[70]}`
                           }}
                         >
                           <Checklist />
                         </Box>
                       </Grid>
-                      <Grid item xs={12} md={6}>
-                        <Box p={4}>
+                      <Grid
+                        size={{
+                          xs: 12,
+                          md: 6
+                        }}
+                      >
+                        <Box
+                          sx={{
+                            p: 4
+                          }}
+                        >
                           <Profile />
                         </Box>
                       </Grid>
@@ -211,8 +247,12 @@ function DashboardTasks() {
               </>
             )}
             {currentTab === 'taskSearch' && (
-              <Grid item xs={12}>
-                <Box p={4}>
+              <Grid size={12}>
+                <Box
+                  sx={{
+                    p: 4
+                  }}
+                >
                   <TaskSearch />
                 </Box>
               </Grid>

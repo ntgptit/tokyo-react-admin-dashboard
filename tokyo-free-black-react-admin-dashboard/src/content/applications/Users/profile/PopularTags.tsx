@@ -5,12 +5,13 @@ import {
   Divider,
   List,
   ListItem,
+  ListItemButton,
   ListItemAvatar,
   ListSubheader,
   ListItemText,
   Avatar,
   useTheme,
-  styled,
+  styled
 } from '@mui/material';
 
 const ListWrapper = styled(List)(
@@ -30,53 +31,55 @@ function PopularTags() {
       <CardHeader title="Popular Tags" />
       <Divider />
       <ListWrapper disablePadding>
-        <ListItem
+        <ListItemButton
           sx={{
             color: `${theme.colors.primary.main}`,
             '&:hover': { color: `${theme.colors.primary.dark}` }
           }}
-          button
         >
           <ListItemText primary="#HTML" />
-        </ListItem>
+        </ListItemButton>
         <Divider />
-        <ListItem
+        <ListItemButton
           sx={{
             color: `${theme.colors.primary.main}`,
             '&:hover': { color: `${theme.colors.primary.dark}` }
           }}
-          button
         >
           <ListItemText primary="#software_development" />
-        </ListItem>
+        </ListItemButton>
         <Divider />
-        <ListItem
+        <ListItemButton
           sx={{
             color: `${theme.colors.primary.main}`,
             '&:hover': { color: `${theme.colors.primary.dark}` }
           }}
-          button
         >
           <ListItemText primary="#TrendingInfuencers" />
-        </ListItem>
+        </ListItemButton>
         <Divider />
-        <ListItem
+        <ListItemButton
           sx={{
             color: `${theme.colors.primary.main}`,
             '&:hover': { color: `${theme.colors.primary.dark}` }
           }}
-          button
         >
           <ListItemText primary="#investorsWatch2022" />
-        </ListItem>
+        </ListItemButton>
         <Divider />
         <ListSubheader>
-          <Typography sx={{ py: 1.5 }} variant="h4" color="text.primary">
+          <Typography
+            variant="h4"
+            sx={{
+              color: 'text.primary',
+              py: 1.5
+            }}
+          >
             Groups
           </Typography>
         </ListSubheader>
         <Divider />
-        <ListItem button>
+        <ListItemButton>
           <ListItemAvatar>
             <Avatar
               sx={{
@@ -90,15 +93,17 @@ function PopularTags() {
             </Avatar>
           </ListItemAvatar>
           <ListItemText
-            primaryTypographyProps={{
-              variant: 'h5',
-              color: `${theme.colors.alpha.black[100]}`
-            }}
             primary="Web Designers Lounge"
+            slotProps={{
+              primary: {
+                variant: 'h5',
+                color: `${theme.colors.alpha.black[100]}`
+              }
+            }}
           />
-        </ListItem>
+        </ListItemButton>
         <Divider />
-        <ListItem button>
+        <ListItemButton>
           <ListItemAvatar>
             <Avatar
               sx={{
@@ -112,15 +117,17 @@ function PopularTags() {
             </Avatar>
           </ListItemAvatar>
           <ListItemText
-            primaryTypographyProps={{
-              variant: 'h5',
-              color: `${theme.colors.alpha.black[100]}`
-            }}
             primary="Writer’s Digest Daily"
+            slotProps={{
+              primary: {
+                variant: 'h5',
+                color: `${theme.colors.alpha.black[100]}`
+              }
+            }}
           />
-        </ListItem>
+        </ListItemButton>
         <Divider />
-        <ListItem button>
+        <ListItemButton>
           <ListItemAvatar>
             <Avatar
               sx={{ width: 38, height: 38 }}
@@ -128,13 +135,15 @@ function PopularTags() {
             />
           </ListItemAvatar>
           <ListItemText
-            primaryTypographyProps={{
-              variant: 'h5',
-              color: `${theme.colors.alpha.black[100]}`
-            }}
             primary="Google Developers"
+            slotProps={{
+              primary: {
+                variant: 'h5',
+                color: `${theme.colors.alpha.black[100]}`
+              }
+            }}
           />
-        </ListItem>
+        </ListItemButton>
       </ListWrapper>
     </Card>
   );

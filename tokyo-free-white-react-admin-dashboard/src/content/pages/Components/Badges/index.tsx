@@ -55,11 +55,13 @@ function Badges() {
         <Grid
           container
           direction="row"
-          justifyContent="center"
-          alignItems="stretch"
           spacing={3}
+          sx={{
+            justifyContent: 'center',
+            alignItems: 'stretch'
+          }}
         >
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Card>
               <CardHeader title="Shapes" />
               <Divider />
@@ -86,7 +88,7 @@ function Badges() {
               </CardContent>
             </Card>
           </Grid>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Card>
               <CardHeader title="Badges Visibility" />
               <Divider />
@@ -150,7 +152,7 @@ function Badges() {
               </CardContent>
             </Card>
           </Grid>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Card>
               <CardHeader title="Colors" />
               <Divider />

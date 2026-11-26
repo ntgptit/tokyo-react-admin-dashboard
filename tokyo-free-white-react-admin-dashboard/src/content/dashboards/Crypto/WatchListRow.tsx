@@ -140,10 +140,12 @@ function WatchListRow() {
     <Card>
       <Stack
         direction="row"
-        justifyContent="space-evenly"
-        alignItems="stretch"
         divider={<Divider orientation="vertical" flexItem />}
         spacing={0}
+        sx={{
+          justifyContent: 'space-evenly',
+          alignItems: 'stretch'
+        }}
       >
         <Box
           sx={{
@@ -152,11 +154,18 @@ function WatchListRow() {
           }}
         >
           <Box
-            display="flex"
-            alignItems="flex-start"
-            justifyContent="space-between"
+            sx={{
+              display: 'flex',
+              alignItems: 'flex-start',
+              justifyContent: 'space-between'
+            }}
           >
-            <Box display="flex" alignItems="center">
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center'
+              }}
+            >
               <AvatarWrapper>
                 <img
                   alt="BTC"
@@ -175,10 +184,12 @@ function WatchListRow() {
             <Label color="secondary">24h</Label>
           </Box>
           <Box
-            mt={3}
-            display="flex"
-            alignItems="center"
-            justifyContent="space-between"
+            sx={{
+              mt: 3,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between'
+            }}
           >
             <Box
               sx={{
@@ -205,7 +216,11 @@ function WatchListRow() {
               }}
             />
           </Box>
-          <Box pt={2}>
+          <Box
+            sx={{
+              pt: 2
+            }}
+          >
             <Chart
               options={Box1Options}
               series={Box1Data}
@@ -221,11 +236,18 @@ function WatchListRow() {
           }}
         >
           <Box
-            display="flex"
-            alignItems="flex-start"
-            justifyContent="space-between"
+            sx={{
+              display: 'flex',
+              alignItems: 'flex-start',
+              justifyContent: 'space-between'
+            }}
           >
-            <Box display="flex" alignItems="center">
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center'
+              }}
+            >
               <AvatarWrapper>
                 <img
                   alt="ETH"
@@ -244,10 +266,12 @@ function WatchListRow() {
             <Label color="secondary">24h</Label>
           </Box>
           <Box
-            mt={3}
-            display="flex"
-            alignItems="center"
-            justifyContent="space-between"
+            sx={{
+              mt: 3,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between'
+            }}
           >
             <Box
               sx={{
@@ -274,7 +298,11 @@ function WatchListRow() {
               }}
             />
           </Box>
-          <Box pt={2}>
+          <Box
+            sx={{
+              pt: 2
+            }}
+          >
             <Chart
               options={Box1Options}
               series={Box2Data}
@@ -290,11 +318,18 @@ function WatchListRow() {
           }}
         >
           <Box
-            display="flex"
-            alignItems="flex-start"
-            justifyContent="space-between"
+            sx={{
+              display: 'flex',
+              alignItems: 'flex-start',
+              justifyContent: 'space-between'
+            }}
           >
-            <Box display="flex" alignItems="center">
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center'
+              }}
+            >
               <AvatarWrapper>
                 <img
                   alt="ADA"
@@ -313,10 +348,12 @@ function WatchListRow() {
             <Label color="secondary">24h</Label>
           </Box>
           <Box
-            mt={3}
-            display="flex"
-            alignItems="center"
-            justifyContent="space-between"
+            sx={{
+              mt: 3,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between'
+            }}
           >
             <Box
               sx={{
@@ -343,7 +380,11 @@ function WatchListRow() {
               }}
             />
           </Box>
-          <Box pt={2}>
+          <Box
+            sx={{
+              pt: 2
+            }}
+          >
             <Chart
               options={Box1Options}
               series={Box3Data}

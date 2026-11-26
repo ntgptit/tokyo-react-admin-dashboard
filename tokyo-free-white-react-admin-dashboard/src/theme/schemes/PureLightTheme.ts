@@ -425,11 +425,12 @@ export const PureLightTheme = createTheme({
     },
     MuiSelect: {
       styleOverrides: {
-        iconOutlined: {
-          color: colors.alpha.black[50]
-        },
         icon: {
-          top: 'calc(50% - 14px)'
+          top: 'calc(50% - 14px)',
+
+          '.MuiOutlinedInput-root &': {
+            color: colors.alpha.black[50]
+          }
         }
       }
     },
@@ -554,15 +555,17 @@ export const PureLightTheme = createTheme({
           fontWeight: 'bold',
           transition: 'all .2s'
         },
-        textPrimary: {
-          '&.Mui-selected': {
-            boxShadow: colors.shadows.primary
-          },
-          '&.MuiButtonBase-root:hover': {
-            background: colors.alpha.black[5]
-          },
-          '&.Mui-selected.MuiButtonBase-root:hover': {
-            background: colors.primary.main
+        root: {
+          '&.MuiPaginationItem-text.MuiPaginationItem-colorPrimary': {
+            '&.Mui-selected': {
+              boxShadow: colors.shadows.primary
+            },
+            '&.MuiButtonBase-root:hover': {
+              background: colors.alpha.black[5]
+            },
+            '&.Mui-selected.MuiButtonBase-root:hover': {
+              background: colors.primary.main
+            }
           }
         }
       }
@@ -580,23 +583,33 @@ export const PureLightTheme = createTheme({
 
           '.MuiSvgIcon-root': {
             transition: 'all .2s'
+          },
+
+          '&.MuiButton-contained.MuiButton-colorSecondary': {
+            backgroundColor: colors.secondary.main,
+            color: colors.alpha.white[100],
+            border: '1px solid ' + colors.alpha.black[30]
+          },
+          '&.MuiButton-outlined.MuiButton-colorSecondary': {
+            backgroundColor: colors.alpha.white[100],
+
+            '&:hover, &.MuiSelected': {
+              backgroundColor: colors.alpha.black[5],
+              color: colors.alpha.black[100]
+            }
+          },
+          '&.MuiButton-text.MuiButton-sizeSmall': {
+            padding: '7px 12px'
+          },
+          '&.MuiButton-text.MuiButton-sizeMedium': {
+            padding: '9px 16px'
+          },
+          '&.MuiButton-text.MuiButton-sizeLarge': {
+            padding: '12px 16px'
           }
         },
         endIcon: {
           marginRight: -8
-        },
-        containedSecondary: {
-          backgroundColor: colors.secondary.main,
-          color: colors.alpha.white[100],
-          border: '1px solid ' + colors.alpha.black[30]
-        },
-        outlinedSecondary: {
-          backgroundColor: colors.alpha.white[100],
-
-          '&:hover, &.MuiSelected': {
-            backgroundColor: colors.alpha.black[5],
-            color: colors.alpha.black[100]
-          }
         },
         sizeSmall: {
           padding: '6px 16px',
@@ -607,15 +620,6 @@ export const PureLightTheme = createTheme({
         },
         sizeLarge: {
           padding: '11px 24px'
-        },
-        textSizeSmall: {
-          padding: '7px 12px'
-        },
-        textSizeMedium: {
-          padding: '9px 16px'
-        },
-        textSizeLarge: {
-          padding: '12px 16px'
         }
       }
     },
@@ -765,7 +769,7 @@ export const PureLightTheme = createTheme({
         root: {
           padding: 0,
 
-          '& .MuiListItem-button': {
+          '& .MuiListItemButton-root': {
             transition: 'all .2s',
 
             '& > .MuiSvgIcon-root': {
@@ -789,7 +793,7 @@ export const PureLightTheme = createTheme({
         padding: {
           padding: '12px',
 
-          '& .MuiListItem-button': {
+          '& .MuiListItemButton-root': {
             borderRadius: 6,
             margin: '1px 0'
           }
@@ -985,8 +989,10 @@ export const PureLightTheme = createTheme({
           lineHeight: 1.5,
           fontSize: 14
         },
-        standardInfo: {
-          color: colors.info.main
+        root: {
+          '&.MuiAlert-standard.MuiAlert-colorInfo': {
+            color: colors.info.main
+          }
         },
         action: {
           color: colors.alpha.black[70]
@@ -1133,10 +1139,6 @@ export const PureLightTheme = createTheme({
       styleOverrides: {
         gutterBottom: {
           marginBottom: 4
-        },
-        paragraph: {
-          fontSize: 17,
-          lineHeight: 1.7
         }
       }
     }

@@ -32,11 +32,13 @@ function Buttons() {
         <Grid
           container
           direction="row"
-          justifyContent="center"
-          alignItems="stretch"
           spacing={3}
+          sx={{
+            justifyContent: 'center',
+            alignItems: 'stretch'
+          }}
         >
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Card>
               <CardHeader title="Contained Buttons" />
               <Divider />
@@ -68,7 +70,7 @@ function Buttons() {
               </CardContent>
             </Card>
           </Grid>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Card>
               <CardHeader title="Text Buttons" />
               <Divider />
@@ -89,7 +91,7 @@ function Buttons() {
               </CardContent>
             </Card>
           </Grid>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Card>
               <CardHeader title="Outlined Buttons" />
               <Divider />
@@ -117,7 +119,7 @@ function Buttons() {
               </CardContent>
             </Card>
           </Grid>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Card>
               <CardHeader title="Sizes" />
               <Divider />

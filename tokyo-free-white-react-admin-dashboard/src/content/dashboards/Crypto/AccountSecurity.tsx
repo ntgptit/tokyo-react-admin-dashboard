@@ -70,15 +70,17 @@ function AccountSecurity() {
           </ListItemAvatar>
           <ListItemText
             primary={<Text color="black">2FA Authentication</Text>}
-            primaryTypographyProps={{
-              variant: 'body1',
-              fontWeight: 'bold',
-              color: 'textPrimary',
-              gutterBottom: true,
-              noWrap: true
-            }}
+
             secondary={<Text color="error">Disabled</Text>}
-            secondaryTypographyProps={{ variant: 'body2', noWrap: true }}
+            slotProps={{
+              primary: {
+                variant: 'body1',
+                gutterBottom: true,
+                noWrap: true,
+                sx: { fontWeight: 'bold', color: 'text.primary' }
+              },
+              secondary: { variant: 'body2', noWrap: true }
+            }}
           />
           <Switch
             edge="end"
@@ -100,15 +102,17 @@ function AccountSecurity() {
           </ListItemAvatar>
           <ListItemText
             primary={<Text color="black">Phone Verification</Text>}
-            primaryTypographyProps={{
-              variant: 'body1',
-              fontWeight: 'bold',
-              color: 'textPrimary',
-              gutterBottom: true,
-              noWrap: true
-            }}
+
             secondary={<Text color="success">Active</Text>}
-            secondaryTypographyProps={{ variant: 'body2', noWrap: true }}
+            slotProps={{
+              primary: {
+                variant: 'body1',
+                gutterBottom: true,
+                noWrap: true,
+                sx: { fontWeight: 'bold', color: 'text.primary' }
+              },
+              secondary: { variant: 'body2', noWrap: true }
+            }}
           />
           <Switch
             edge="end"
@@ -130,15 +134,17 @@ function AccountSecurity() {
           </ListItemAvatar>
           <ListItemText
             primary={<Text color="black">Recovery Email</Text>}
-            primaryTypographyProps={{
-              variant: 'body1',
-              fontWeight: 'bold',
-              color: 'textPrimary',
-              gutterBottom: true,
-              noWrap: true
-            }}
+
             secondary={<Text color="warning">Not completed</Text>}
-            secondaryTypographyProps={{ variant: 'body2', noWrap: true }}
+            slotProps={{
+              primary: {
+                variant: 'body1',
+                gutterBottom: true,
+                noWrap: true,
+                sx: { fontWeight: 'bold', color: 'text.primary' }
+              },
+              secondary: { variant: 'body2', noWrap: true }
+            }}
           />
           <Switch
             edge="end"

@@ -2,7 +2,8 @@ import { useState } from 'react';
 import {
   Box,
   Typography,
-  Hidden,
+  useMediaQuery,
+  useTheme,
   Container,
   Button,
   Grid,
@@ -10,7 +11,6 @@ import {
 } from '@mui/material';
 import { Helmet } from 'react-helmet-async';
 import RefreshTwoToneIcon from '@mui/icons-material/RefreshTwoTone';
-import LoadingButton from '@mui/lab/LoadingButton';
 
 const GridWrapper = styled(Grid)(
   ({ theme }) => `
@@ -43,6 +43,8 @@ const TypographySecondary = styled(Typography)(
 );
 
 function Status500() {
+  const theme = useTheme();
+  const isMdDown = useMediaQuery(theme.breakpoints.down('lg'));
   const [pending, setPending] = useState(false);
   function handleClick() {
     setPending(true);
@@ -56,20 +58,29 @@ function Status500() {
       <MainContent>
         <Grid
           container
-          sx={{ height: '100%' }}
-          alignItems="stretch"
           spacing={0}
+          sx={{
+            alignItems: 'stretch',
+            height: '100%'
+          }}
         >
           <Grid
-            xs={12}
-            md={6}
-            alignItems="center"
-            display="flex"
-            justifyContent="center"
-            item
+            sx={{
+              alignItems: 'center',
+              display: 'flex',
+              justifyContent: 'center'
+            }}
+            size={{
+              xs: 12,
+              md: 6
+            }}
           >
             <Container maxWidth="sm">
-              <Box textAlign="center">
+              <Box
+                sx={{
+                  textAlign: 'center'
+                }}
+              >
                 <img
                   alt="500"
                   height={260}
@@ -80,14 +91,16 @@ function Status500() {
                 </Typography>
                 <Typography
                   variant="h4"
-                  color="text.secondary"
-                  fontWeight="normal"
-                  sx={{ mb: 4 }}
+                  sx={{
+                    color: 'text.secondary',
+                    fontWeight: 'normal',
+                    mb: 4
+                  }}
                 >
                   The server encountered an internal error and was not able to
                   complete your request
                 </Typography>
-                <LoadingButton
+                <Button
                   onClick={handleClick}
                   loading={pending}
                   variant="outlined"
@@ -95,43 +108,48 @@ function Status500() {
                   startIcon={<RefreshTwoToneIcon />}
                 >
                   Refresh view
-                </LoadingButton>
+                </Button>
                 <Button href="/overview" variant="contained" sx={{ ml: 1 }}>
                   Go back
                 </Button>
               </Box>
             </Container>
           </Grid>
-          <Hidden mdDown>
-            <GridWrapper
-              xs={12}
-              md={6}
-              alignItems="center"
-              display="flex"
-              justifyContent="center"
-              item
-            >
-              <Container maxWidth="sm">
-                <Box textAlign="center">
-                  <TypographyPrimary variant="h1" sx={{ my: 2 }}>
-                    Tokyo Free Black React Typescript Admin Dashboard
-                  </TypographyPrimary>
-                  <TypographySecondary
-                    variant="h4"
-                    fontWeight="normal"
-                    sx={{ mb: 4 }}
+          {!isMdDown && (
+            <>
+              <GridWrapper
+                size={{ xs: 12, md: 6 }}
+                sx={{
+                  alignItems: 'center',
+                  display: 'flex',
+                  justifyContent: 'center'
+                }}
+              >
+                <Container maxWidth="sm">
+                  <Box
+                    sx={{
+                      textAlign: 'center'
+                    }}
                   >
-                    High performance React template built with lots of powerful
-                    Material-UI components across multiple product niches for
-                    fast &amp; perfect apps development processes.
-                  </TypographySecondary>
-                  <Button href="/overview" size="large" variant="contained">
-                    Overview
-                  </Button>
-                </Box>
-              </Container>
-            </GridWrapper>
-          </Hidden>
+                    <TypographyPrimary variant="h1" sx={{ my: 2 }}>
+                      Tokyo Free Black React Typescript Admin Dashboard
+                    </TypographyPrimary>
+                    <TypographySecondary
+                      variant="h4"
+                      sx={{ fontWeight: 'normal', mb: 4 }}
+                    >
+                      High performance React template built with lots of
+                      powerful Material-UI components across multiple product
+                      niches for fast &amp; perfect apps development processes.
+                    </TypographySecondary>
+                    <Button href="/overview" size="large" variant="contained">
+                      Overview
+                    </Button>
+                  </Box>
+                </Container>
+              </GridWrapper>
+            </>
+          )}
         </Grid>
       </MainContent>
     </>

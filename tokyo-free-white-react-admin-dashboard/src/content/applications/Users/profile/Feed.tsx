@@ -55,20 +55,46 @@ function Feed() {
     <Card>
       <CardHeader title="Followers Feed" />
       <Divider />
-      <Box p={2}>
+      <Box
+        sx={{
+          p: 2
+        }}
+      >
         <Grid container spacing={0}>
           {feed.map((_feed) => (
-            <Grid key={_feed.name} item xs={12} sm={6} lg={4}>
-              <Box p={3} display="flex" alignItems="flex-start">
+            <Grid
+              key={_feed.name}
+              size={{
+                xs: 12,
+                sm: 6,
+                lg: 4
+              }}
+            >
+              <Box
+                sx={{
+                  p: 3,
+                  display: 'flex',
+                  alignItems: 'flex-start'
+                }}
+              >
                 <Avatar src={_feed.avatar} />
-                <Box pl={2}>
+                <Box
+                  sx={{
+                    pl: 2
+                  }}
+                >
                   <Typography gutterBottom variant="subtitle2">
                     {_feed.company}
                   </Typography>
                   <Typography variant="h4" gutterBottom>
                     {_feed.name}
                   </Typography>
-                  <Typography color="text.primary" sx={{ pb: 2 }}>
+                  <Typography
+                    sx={{
+                      color: 'text.primary',
+                      pb: 2
+                    }}
+                  >
                     {_feed.jobtitle}
                   </Typography>
                   <Button

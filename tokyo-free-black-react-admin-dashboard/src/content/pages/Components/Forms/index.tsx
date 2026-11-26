@@ -32,7 +32,7 @@ import VolumeUp from '@mui/icons-material/VolumeUp';
 
 import Switch from '@mui/material/Switch';
 
-const label = { inputProps: { 'aria-label': 'Switch demo' } };
+const label = { slotProps: { input: { 'aria-label': 'Switch demo' } } };
 
 const currencies = [
   {
@@ -82,11 +82,13 @@ function Forms() {
         <Grid
           container
           direction="row"
-          justifyContent="center"
-          alignItems="stretch"
           spacing={3}
+          sx={{
+            justifyContent: 'center',
+            alignItems: 'stretch'
+          }}
         >
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Card>
               <CardHeader title="Input Fields" />
               <Divider />
@@ -122,16 +124,20 @@ function Forms() {
                       id="outlined-read-only-input"
                       label="Read Only"
                       defaultValue="Hello World"
-                      InputProps={{
-                        readOnly: true
+                      slotProps={{
+                        input: {
+                          readOnly: true
+                        }
                       }}
                     />
                     <TextField
                       id="outlined-number"
                       label="Number"
                       type="number"
-                      InputLabelProps={{
-                        shrink: true
+                      slotProps={{
+                        inputLabel: {
+                          shrink: true
+                        }
                       }}
                     />
                     <TextField
@@ -172,19 +178,23 @@ function Forms() {
                       id="filled-read-only-input"
                       label="Read Only"
                       defaultValue="Hello World"
-                      InputProps={{
-                        readOnly: true
-                      }}
                       variant="filled"
+                      slotProps={{
+                        input: {
+                          readOnly: true
+                        }
+                      }}
                     />
                     <TextField
                       id="filled-number"
                       label="Number"
                       type="number"
-                      InputLabelProps={{
-                        shrink: true
-                      }}
                       variant="filled"
+                      slotProps={{
+                        inputLabel: {
+                          shrink: true
+                        }
+                      }}
                     />
                     <TextField
                       id="filled-search"
@@ -226,19 +236,23 @@ function Forms() {
                       id="standard-read-only-input"
                       label="Read Only"
                       defaultValue="Hello World"
-                      InputProps={{
-                        readOnly: true
-                      }}
                       variant="standard"
+                      slotProps={{
+                        input: {
+                          readOnly: true
+                        }
+                      }}
                     />
                     <TextField
                       id="standard-number"
                       label="Number"
                       type="number"
-                      InputLabelProps={{
-                        shrink: true
-                      }}
                       variant="standard"
+                      slotProps={{
+                        inputLabel: {
+                          shrink: true
+                        }
+                      }}
                     />
                     <TextField
                       id="standard-search"
@@ -258,7 +272,7 @@ function Forms() {
               </CardContent>
             </Card>
           </Grid>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Card>
               <CardHeader title="Select Inputs" />
               <Divider />
@@ -292,10 +306,12 @@ function Forms() {
                       label="Native select"
                       value={currency}
                       onChange={handleChange}
-                      SelectProps={{
-                        native: true
-                      }}
                       helperText="Please select your currency"
+                      slotProps={{
+                        select: {
+                          native: true
+                        }
+                      }}
                     >
                       {currencies.map((option) => (
                         <option key={option.value} value={option.value}>
@@ -326,11 +342,13 @@ function Forms() {
                       label="Native select"
                       value={currency}
                       onChange={handleChange}
-                      SelectProps={{
-                        native: true
-                      }}
                       helperText="Please select your currency"
                       variant="filled"
+                      slotProps={{
+                        select: {
+                          native: true
+                        }
+                      }}
                     >
                       {currencies.map((option) => (
                         <option key={option.value} value={option.value}>
@@ -361,11 +379,13 @@ function Forms() {
                       label="Native select"
                       value={currency}
                       onChange={handleChange}
-                      SelectProps={{
-                        native: true
-                      }}
                       helperText="Please select your currency"
                       variant="standard"
+                      slotProps={{
+                        select: {
+                          native: true
+                        }
+                      }}
                     >
                       {currencies.map((option) => (
                         <option key={option.value} value={option.value}>
@@ -378,7 +398,7 @@ function Forms() {
               </CardContent>
             </Card>
           </Grid>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Card>
               <CardHeader title="Switches" />
               <Divider />
@@ -390,7 +410,7 @@ function Forms() {
               </CardContent>
             </Card>
           </Grid>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Card>
               <CardHeader title="Checkboxes &amp; Radios" />
               <Divider />
@@ -443,7 +463,7 @@ function Forms() {
               </CardContent>
             </Card>
           </Grid>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Card>
               <CardHeader title="Sliders" />
               <Divider />
@@ -452,8 +472,10 @@ function Forms() {
                   <Stack
                     spacing={2}
                     direction="row"
-                    sx={{ mb: 1 }}
-                    alignItems="center"
+                    sx={{
+                      alignItems: 'center',
+                      mb: 1
+                    }}
                   >
                     <VolumeDown />
                     <Slider

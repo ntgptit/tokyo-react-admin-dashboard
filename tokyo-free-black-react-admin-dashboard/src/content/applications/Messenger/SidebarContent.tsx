@@ -27,7 +27,7 @@ import SearchTwoToneIcon from '@mui/icons-material/SearchTwoTone';
 import Label from 'src/components/Label';
 import CheckTwoToneIcon from '@mui/icons-material/CheckTwoTone';
 import AlarmTwoToneIcon from '@mui/icons-material/AlarmTwoTone';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router';
 
 const AvatarSuccess = styled(Avatar)(
   ({ theme }) => `
@@ -124,7 +124,12 @@ function SidebarContent() {
 
   return (
     <RootWrapper>
-      <Box display="flex" alignItems="flex-start">
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'flex-start'
+        }}
+      >
         <Avatar alt={user.name} src={user.avatar} />
         <Box
           sx={{
@@ -133,9 +138,11 @@ function SidebarContent() {
           }}
         >
           <Box
-            display="flex"
-            alignItems="flex-start"
-            justifyContent="space-between"
+            sx={{
+              display: 'flex',
+              alignItems: 'flex-start',
+              justifyContent: 'space-between'
+            }}
           >
             <Box>
               <Typography variant="h5" noWrap>
@@ -177,14 +184,16 @@ function SidebarContent() {
         }}
         size="small"
         fullWidth
-        InputProps={{
-          startAdornment: (
-            <InputAdornment position="start">
-              <SearchTwoToneIcon />
-            </InputAdornment>
-          )
-        }}
         placeholder="Search..."
+        slotProps={{
+          input: {
+            startAdornment: (
+              <InputAdornment position="start">
+                <SearchTwoToneIcon />
+              </InputAdornment>
+            )
+          }
+        }}
       />
 
       <Typography
@@ -212,7 +221,11 @@ function SidebarContent() {
         </Tabs>
       </TabsContainerWrapper>
 
-      <Box mt={2}>
+      <Box
+        sx={{
+          mt: 2
+        }}
+      >
         {currentTab === 'all' && (
           <List disablePadding component="div">
             <ListItemWrapper selected>
@@ -223,17 +236,20 @@ function SidebarContent() {
                 sx={{
                   mr: 1
                 }}
-                primaryTypographyProps={{
-                  color: 'textPrimary',
-                  variant: 'h5',
-                  noWrap: true
-                }}
-                secondaryTypographyProps={{
-                  color: 'textSecondary',
-                  noWrap: true
-                }}
                 primary="Zain Baptista"
                 secondary="Hey there, how are you today? Is it ok if I call you?"
+                slotProps={{
+                  primary: {
+                    color: 'textPrimary',
+                    variant: 'h5',
+                    noWrap: true
+                  },
+
+                  secondary: {
+                    color: 'textSecondary',
+                    noWrap: true
+                  }
+                }}
               />
               <Label color="primary">
                 <b>2</b>
@@ -247,17 +263,20 @@ function SidebarContent() {
                 sx={{
                   mr: 1
                 }}
-                primaryTypographyProps={{
-                  color: 'textPrimary',
-                  variant: 'h5',
-                  noWrap: true
-                }}
-                secondaryTypographyProps={{
-                  color: 'textSecondary',
-                  noWrap: true
-                }}
                 primary="Kierra Herwitz"
                 secondary="Hi! Did you manage to send me those documents"
+                slotProps={{
+                  primary: {
+                    color: 'textPrimary',
+                    variant: 'h5',
+                    noWrap: true
+                  },
+
+                  secondary: {
+                    color: 'textSecondary',
+                    noWrap: true
+                  }
+                }}
               />
             </ListItemWrapper>
             <ListItemWrapper>
@@ -268,17 +287,20 @@ function SidebarContent() {
                 sx={{
                   mr: 1
                 }}
-                primaryTypographyProps={{
-                  color: 'textPrimary',
-                  variant: 'h5',
-                  noWrap: true
-                }}
-                secondaryTypographyProps={{
-                  color: 'textSecondary',
-                  noWrap: true
-                }}
                 primary="Craig Vaccaro"
                 secondary="Ola, I still haven't received the program schedule"
+                slotProps={{
+                  primary: {
+                    color: 'textPrimary',
+                    variant: 'h5',
+                    noWrap: true
+                  },
+
+                  secondary: {
+                    color: 'textSecondary',
+                    noWrap: true
+                  }
+                }}
               />
             </ListItemWrapper>
             <ListItemWrapper>
@@ -289,17 +311,20 @@ function SidebarContent() {
                 sx={{
                   mr: 1
                 }}
-                primaryTypographyProps={{
-                  color: 'textPrimary',
-                  variant: 'h5',
-                  noWrap: true
-                }}
-                secondaryTypographyProps={{
-                  color: 'textSecondary',
-                  noWrap: true
-                }}
                 primary="Adison Press"
                 secondary="I recently did some buying on Amazon and now I'm stuck"
+                slotProps={{
+                  primary: {
+                    color: 'textPrimary',
+                    variant: 'h5',
+                    noWrap: true
+                  },
+
+                  secondary: {
+                    color: 'textSecondary',
+                    noWrap: true
+                  }
+                }}
               />
               <Label color="primary">
                 <b>8</b>
@@ -317,17 +342,20 @@ function SidebarContent() {
                 sx={{
                   mr: 1
                 }}
-                primaryTypographyProps={{
-                  color: 'textPrimary',
-                  variant: 'h5',
-                  noWrap: true
-                }}
-                secondaryTypographyProps={{
-                  color: 'textSecondary',
-                  noWrap: true
-                }}
                 primary="Zain Baptista"
                 secondary="Hey there, how are you today? Is it ok if I call you?"
+                slotProps={{
+                  primary: {
+                    color: 'textPrimary',
+                    variant: 'h5',
+                    noWrap: true
+                  },
+
+                  secondary: {
+                    color: 'textSecondary',
+                    noWrap: true
+                  }
+                }}
               />
               <Label color="primary">
                 <b>2</b>
@@ -341,17 +369,20 @@ function SidebarContent() {
                 sx={{
                   mr: 1
                 }}
-                primaryTypographyProps={{
-                  color: 'textPrimary',
-                  variant: 'h5',
-                  noWrap: true
-                }}
-                secondaryTypographyProps={{
-                  color: 'textSecondary',
-                  noWrap: true
-                }}
                 primary="Adison Press"
                 secondary="I recently did some buying on Amazon and now I'm stuck"
+                slotProps={{
+                  primary: {
+                    color: 'textPrimary',
+                    variant: 'h5',
+                    noWrap: true
+                  },
+
+                  secondary: {
+                    color: 'textSecondary',
+                    noWrap: true
+                  }
+                }}
               />
               <Label color="primary">
                 <b>8</b>
@@ -360,7 +391,11 @@ function SidebarContent() {
           </List>
         )}
         {currentTab === 'archived' && (
-          <Box pb={3}>
+          <Box
+            sx={{
+              pb: 3
+            }}
+          >
             <Divider
               sx={{
                 mb: 3
@@ -386,7 +421,14 @@ function SidebarContent() {
           </Box>
         )}
       </Box>
-      <Box display="flex" pb={1} mt={4} alignItems="center">
+      <Box
+        sx={{
+          display: 'flex',
+          pb: 1,
+          mt: 4,
+          alignItems: 'center'
+        }}
+      >
         <Typography
           sx={{
             mr: 1
@@ -402,15 +444,25 @@ function SidebarContent() {
       <MeetingBox>
         <Typography variant="h4">Daily Design Meeting</Typography>
 
-        <Box py={3} display="flex" alignItems="flex-start">
+        <Box
+          sx={{
+            py: 3,
+            display: 'flex',
+            alignItems: 'flex-start'
+          }}
+        >
           <AlarmTwoToneIcon />
-          <Box pl={1}>
+          <Box
+            sx={{
+              pl: 1
+            }}
+          >
             <Typography
               variant="subtitle2"
               sx={{
+                color: 'text.primary',
                 lineHeight: 1
               }}
-              color="text.primary"
             >
               10:00 - 11:30
             </Typography>
@@ -421,7 +473,13 @@ function SidebarContent() {
             </Typography>
           </Box>
         </Box>
-        <Box display="flex" alignItems="center" justifyContent="space-between">
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between'
+          }}
+        >
           <AvatarGroup>
             <Tooltip arrow title="View profile for Remy Sharp">
               <Avatar
@@ -470,15 +528,25 @@ function SidebarContent() {
       <MeetingBox>
         <Typography variant="h4">Investors Council Meeting</Typography>
 
-        <Box py={3} display="flex" alignItems="flex-start">
+        <Box
+          sx={{
+            py: 3,
+            display: 'flex',
+            alignItems: 'flex-start'
+          }}
+        >
           <AlarmTwoToneIcon />
-          <Box pl={1}>
+          <Box
+            sx={{
+              pl: 1
+            }}
+          >
             <Typography
               variant="subtitle2"
               sx={{
+                color: 'text.primary',
                 lineHeight: 1
               }}
-              color="text.primary"
             >
               14:30 - 16:15
             </Typography>
@@ -489,7 +557,13 @@ function SidebarContent() {
             </Typography>
           </Box>
         </Box>
-        <Box display="flex" alignItems="center" justifyContent="space-between">
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between'
+          }}
+        >
           <AvatarGroup>
             <Tooltip arrow title="View profile for Travis Howard">
               <Avatar

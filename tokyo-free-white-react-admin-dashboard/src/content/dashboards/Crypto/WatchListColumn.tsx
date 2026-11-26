@@ -146,11 +146,18 @@ function WatchListColumn() {
     <Grid
       container
       direction="row"
-      justifyContent="center"
-      alignItems="stretch"
       spacing={3}
+      sx={{
+        justifyContent: 'center',
+        alignItems: 'stretch'
+      }}
     >
-      <Grid item md={4} xs={12}>
+      <Grid
+        size={{
+          md: 4,
+          xs: 12
+        }}
+      >
         <Card
           sx={{
             overflow: 'visible'
@@ -161,7 +168,12 @@ function WatchListColumn() {
               p: 3
             }}
           >
-            <Box display="flex" alignItems="center">
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center'
+              }}
+            >
               <AvatarWrapper>
                 <img
                   alt="BTC"
@@ -208,8 +220,8 @@ function WatchListColumn() {
               <Label color="success">+$500</Label>
               <Typography
                 variant="body2"
-                color="text.secondary"
                 sx={{
+                  color: 'text.secondary',
                   pl: 1
                 }}
               >
@@ -225,7 +237,12 @@ function WatchListColumn() {
           />
         </Card>
       </Grid>
-      <Grid item md={4} xs={12}>
+      <Grid
+        size={{
+          md: 4,
+          xs: 12
+        }}
+      >
         <Card
           sx={{
             overflow: 'visible'
@@ -236,7 +253,12 @@ function WatchListColumn() {
               p: 3
             }}
           >
-            <Box display="flex" alignItems="center">
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center'
+              }}
+            >
               <AvatarWrapper>
                 <img
                   alt="ETH"
@@ -283,8 +305,8 @@ function WatchListColumn() {
               <Label color="error">-$90</Label>
               <Typography
                 variant="body2"
-                color="text.secondary"
                 sx={{
+                  color: 'text.secondary',
                   pl: 1
                 }}
               >
@@ -300,7 +322,12 @@ function WatchListColumn() {
           />
         </Card>
       </Grid>
-      <Grid item md={4} xs={12}>
+      <Grid
+        size={{
+          md: 4,
+          xs: 12
+        }}
+      >
         <Card
           sx={{
             overflow: 'visible'
@@ -311,7 +338,12 @@ function WatchListColumn() {
               p: 3
             }}
           >
-            <Box display="flex" alignItems="center">
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center'
+              }}
+            >
               <AvatarWrapper>
                 <img
                   alt="ADA"
@@ -358,8 +390,8 @@ function WatchListColumn() {
               <Label color="error">-$5</Label>
               <Typography
                 variant="body2"
-                color="text.secondary"
                 sx={{
+                  color: 'text.secondary',
                   pl: 1
                 }}
               >

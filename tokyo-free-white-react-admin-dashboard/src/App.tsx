@@ -1,4 +1,4 @@
-import { useRoutes } from 'react-router-dom';
+import { useRoutes } from 'react-router';
 import router from 'src/router';
 
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';

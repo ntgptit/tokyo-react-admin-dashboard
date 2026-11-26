@@ -81,7 +81,12 @@ const CardCoverAction = styled(Box)(
 const ProfileCover = ({ user }) => {
   return (
     <>
-      <Box display="flex" mb={3}>
+      <Box
+        sx={{
+          display: 'flex',
+          mb: 3
+        }}
+      >
         <Tooltip arrow placement="top" title="Go back">
           <IconButton color="primary" sx={{ p: 2, mr: 2 }}>
             <ArrowBackTwoToneIcon />
@@ -127,18 +132,32 @@ const ProfileCover = ({ user }) => {
           </label>
         </ButtonUploadWrapper>
       </AvatarWrapper>
-      <Box py={2} pl={2} mb={3}>
+      <Box
+        sx={{
+          py: 2,
+          pl: 2,
+          mb: 3
+        }}
+      >
         <Typography gutterBottom variant="h4">
           {user.name}
         </Typography>
         <Typography variant="subtitle2">{user.description}</Typography>
-        <Typography sx={{ py: 2 }} variant="subtitle2" color="text.primary">
+        <Typography
+          variant="subtitle2"
+          sx={{
+            color: 'text.primary',
+            py: 2
+          }}
+        >
           {user.jobtitle} | {user.location} | {user.followers} followers
         </Typography>
         <Box
-          display={{ xs: 'block', md: 'flex' }}
-          alignItems="center"
-          justifyContent="space-between"
+          sx={{
+            display: { xs: 'block', md: 'flex' },
+            alignItems: 'center',
+            justifyContent: 'space-between'
+          }}
         >
           <Box>
             <Button size="small" variant="contained">

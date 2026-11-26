@@ -45,11 +45,13 @@ function ManagementUserSettings() {
         <Grid
           container
           direction="row"
-          justifyContent="center"
-          alignItems="stretch"
           spacing={3}
+          sx={{
+            justifyContent: 'center',
+            alignItems: 'stretch'
+          }}
         >
-          <Grid item xs={12}>
+          <Grid size={12}>
             <TabsWrapper
               onChange={handleTabsChange}
               value={currentTab}
@@ -63,7 +65,7 @@ function ManagementUserSettings() {
               ))}
             </TabsWrapper>
           </Grid>
-          <Grid item xs={12}>
+          <Grid size={12}>
             {currentTab === 'activity' && <ActivityTab />}
             {currentTab === 'edit_profile' && <EditProfileTab />}
             {currentTab === 'notifications' && <NotificationsTab />}

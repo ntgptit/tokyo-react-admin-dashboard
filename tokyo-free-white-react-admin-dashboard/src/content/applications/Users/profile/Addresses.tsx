@@ -20,24 +20,51 @@ function Addresses() {
     <Grid
       container
       direction="row"
-      justifyContent="center"
-      alignItems="stretch"
       spacing={3}
+      sx={{
+        justifyContent: 'center',
+        alignItems: 'stretch'
+      }}
     >
-      <Grid item xs={12} sm={6}>
+      <Grid
+        size={{
+          xs: 12,
+          sm: 6
+        }}
+      >
         <Card>
           <CardHeader
             title="Delivery Addresses"
             subheader={addresses.delivery + ' saved addresses'}
           />
           <Divider />
-          <Box p={2}>
-            <Typography variant="caption" fontWeight="bold">
+          <Box
+            sx={{
+              p: 2
+            }}
+          >
+            <Typography
+              variant="caption"
+              sx={{
+                fontWeight: 'bold'
+              }}
+            >
               Favourite
             </Typography>
-            <Box sx={{ minHeight: { xs: 0, md: 242 } }} p={2}>
+            <Box
+              sx={{
+                p: 2,
+                minHeight: { xs: 0, md: 242 }
+              }}
+            >
               <Typography variant="h5">Kadin Westervelt</Typography>
-              <Typography variant="h5" sx={{ py: 1 }} fontWeight="normal">
+              <Typography
+                variant="h5"
+                sx={{
+                  fontWeight: 'normal',
+                  py: 1
+                }}
+              >
                 714-650-6297
               </Typography>
               <Typography variant="subtitle1">
@@ -54,20 +81,45 @@ function Addresses() {
           </Box>
         </Card>
       </Grid>
-      <Grid item xs={12} sm={6}>
+      <Grid
+        size={{
+          xs: 12,
+          sm: 6
+        }}
+      >
         <Card>
           <CardHeader
             title="Shipping Addresses"
             subheader={addresses.shipping + ' saved addresses'}
           />
           <Divider />
-          <Box p={2}>
-            <Typography variant="caption" fontWeight="bold">
+          <Box
+            sx={{
+              p: 2
+            }}
+          >
+            <Typography
+              variant="caption"
+              sx={{
+                fontWeight: 'bold'
+              }}
+            >
               Favourite
             </Typography>
-            <Box sx={{ minHeight: { xs: 0, md: 242 } }} p={2}>
+            <Box
+              sx={{
+                p: 2,
+                minHeight: { xs: 0, md: 242 }
+              }}
+            >
               <Typography variant="h5">Kadin Westervelt</Typography>
-              <Typography variant="h5" sx={{ py: 1 }} fontWeight="normal">
+              <Typography
+                variant="h5"
+                sx={{
+                  fontWeight: 'normal',
+                  py: 1
+                }}
+              >
                 714-650-6297
               </Typography>
               <Typography variant="subtitle1">

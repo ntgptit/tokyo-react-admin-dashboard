@@ -7,7 +7,7 @@ import {
   styled,
   useTheme
 } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 
 const LogoWrapper = styled(Link)(
   ({ theme }) => `

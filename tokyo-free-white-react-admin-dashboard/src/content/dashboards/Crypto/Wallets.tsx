@@ -78,10 +78,10 @@ function Wallets() {
   return (
     <>
       <Box
-        display="flex"
-        alignItems="center"
-        justifyContent="space-between"
         sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
           pb: 3
         }}
       >
@@ -95,7 +95,13 @@ function Wallets() {
         </Button>
       </Box>
       <Grid container spacing={3}>
-        <Grid xs={12} sm={6} md={3} item>
+        <Grid
+          size={{
+            xs: 12,
+            sm: 6,
+            md: 3
+          }}
+        >
           <Card
             sx={{
               px: 1
@@ -129,7 +135,13 @@ function Wallets() {
             </CardContent>
           </Card>
         </Grid>
-        <Grid xs={12} sm={6} md={3} item>
+        <Grid
+          size={{
+            xs: 12,
+            sm: 6,
+            md: 3
+          }}
+        >
           <Card
             sx={{
               px: 1
@@ -163,7 +175,13 @@ function Wallets() {
             </CardContent>
           </Card>
         </Grid>
-        <Grid xs={12} sm={6} md={3} item>
+        <Grid
+          size={{
+            xs: 12,
+            sm: 6,
+            md: 3
+          }}
+        >
           <Card
             sx={{
               px: 1
@@ -197,7 +215,13 @@ function Wallets() {
             </CardContent>
           </Card>
         </Grid>
-        <Grid xs={12} sm={6} md={3} item>
+        <Grid
+          size={{
+            xs: 12,
+            sm: 6,
+            md: 3
+          }}
+        >
           <Tooltip arrow title="Click to add a new wallet">
             <CardAddAction>
               <CardActionArea

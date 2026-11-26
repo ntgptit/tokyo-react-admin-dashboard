@@ -6,7 +6,7 @@ import {
   Divider,
   Avatar,
   useTheme,
-  styled,
+  styled
 } from '@mui/material';
 
 import ShoppingBagTwoToneIcon from '@mui/icons-material/ShoppingBagTwoTone';
@@ -29,15 +29,36 @@ function RecentActivity() {
     <Card>
       <CardHeader title="Recent Activity" />
       <Divider />
-      <Box px={2} py={4} display="flex" alignItems="flex-start">
+      <Box
+        sx={{
+          px: 2,
+          py: 4,
+          display: 'flex',
+          alignItems: 'flex-start'
+        }}
+      >
         <AvatarPrimary>
           <ShoppingBagTwoToneIcon />
         </AvatarPrimary>
-        <Box pl={2} flex={1}>
+        <Box
+          sx={{
+            pl: 2,
+            flex: 1
+          }}
+        >
           <Typography variant="h3">Orders</Typography>
 
-          <Box pt={2} display="flex">
-            <Box pr={8}>
+          <Box
+            sx={{
+              pt: 2,
+              display: 'flex'
+            }}
+          >
+            <Box
+              sx={{
+                pr: 8
+              }}
+            >
               <Typography
                 gutterBottom
                 variant="caption"
@@ -61,15 +82,36 @@ function RecentActivity() {
         </Box>
       </Box>
       <Divider />
-      <Box px={2} py={4} display="flex" alignItems="flex-start">
+      <Box
+        sx={{
+          px: 2,
+          py: 4,
+          display: 'flex',
+          alignItems: 'flex-start'
+        }}
+      >
         <AvatarPrimary>
           <FavoriteTwoToneIcon />
         </AvatarPrimary>
-        <Box pl={2} flex={1}>
+        <Box
+          sx={{
+            pl: 2,
+            flex: 1
+          }}
+        >
           <Typography variant="h3">Favourites</Typography>
 
-          <Box pt={2} display="flex">
-            <Box pr={8}>
+          <Box
+            sx={{
+              pt: 2,
+              display: 'flex'
+            }}
+          >
+            <Box
+              sx={{
+                pr: 8
+              }}
+            >
               <Typography
                 gutterBottom
                 variant="caption"
@@ -93,15 +135,36 @@ function RecentActivity() {
         </Box>
       </Box>
       <Divider />
-      <Box px={2} py={4} display="flex" alignItems="flex-start">
+      <Box
+        sx={{
+          px: 2,
+          py: 4,
+          display: 'flex',
+          alignItems: 'flex-start'
+        }}
+      >
         <AvatarPrimary>
           <StarTwoToneIcon />
         </AvatarPrimary>
-        <Box pl={2} flex={1}>
+        <Box
+          sx={{
+            pl: 2,
+            flex: 1
+          }}
+        >
           <Typography variant="h3">Reviews</Typography>
 
-          <Box pt={2} display="flex">
-            <Box pr={8}>
+          <Box
+            sx={{
+              pt: 2,
+              display: 'flex'
+            }}
+          >
+            <Box
+              sx={{
+                pr: 8
+              }}
+            >
               <Typography
                 gutterBottom
                 variant="caption"

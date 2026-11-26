@@ -172,10 +172,12 @@ function TasksAnalytics() {
   return (
     <Box>
       <Box
-        mb={2}
-        display="flex"
-        alignItems="center"
-        justifyContent="space-between"
+        sx={{
+          mb: 2,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between'
+        }}
       >
         <Typography variant="h4">Tasks Analytics</Typography>
         <Button
@@ -215,11 +217,17 @@ function TasksAnalytics() {
           ))}
         </Menu>
       </Box>
-      <Box display="flex" alignItems="center" pb={2}>
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          pb: 2
+        }}
+      >
         <Typography
           variant="body2"
-          color="text.secondary"
           sx={{
+            color: 'text.secondary',
             display: 'flex',
             alignItems: 'center',
             mr: 2
@@ -230,8 +238,8 @@ function TasksAnalytics() {
         </Typography>
         <Typography
           variant="body2"
-          color="text.secondary"
           sx={{
+            color: 'text.secondary',
             display: 'flex',
             alignItems: 'center'
           }}

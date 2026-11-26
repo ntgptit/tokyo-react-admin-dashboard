@@ -38,7 +38,13 @@ function Profile() {
         Senior Web Developer
       </Typography>
 
-      <Box display="flex" alignItems="center" justifyContent="center">
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}
+      >
         <Rating value={4} defaultValue={5} precision={1} readOnly />
         <Typography
           variant="h5"
@@ -50,7 +56,14 @@ function Profile() {
         </Typography>
       </Box>
 
-      <Box py={2} display="flex" alignItems="center" justifyContent="center">
+      <Box
+        sx={{
+          py: 2,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}
+      >
         <Tooltip arrow placement="top" title="Call">
           <IconButton
             color="primary"
@@ -95,9 +108,16 @@ function Profile() {
         >
           <ListItemText
             primary="Join Date"
-            primaryTypographyProps={{ variant: 'subtitle2' }}
+            slotProps={{
+              primary: { variant: 'subtitle2' }
+            }}
           />
-          <Typography variant="subtitle2" color="text.primary">
+          <Typography
+            variant="subtitle2"
+            sx={{
+              color: 'text.primary'
+            }}
+          >
             22 January 2021
           </Typography>
         </ListItem>
@@ -109,9 +129,16 @@ function Profile() {
         >
           <ListItemText
             primary="Company"
-            primaryTypographyProps={{ variant: 'subtitle2' }}
+            slotProps={{
+              primary: { variant: 'subtitle2' }
+            }}
           />
-          <Typography variant="subtitle2" color="text.primary">
+          <Typography
+            variant="subtitle2"
+            sx={{
+              color: 'text.primary'
+            }}
+          >
             Google Inc.
           </Typography>
         </ListItem>
@@ -123,12 +150,16 @@ function Profile() {
         >
           <ListItemText
             primary="Tasks"
-            primaryTypographyProps={{ variant: 'subtitle2' }}
+            slotProps={{
+              primary: { variant: 'subtitle2' }
+            }}
           />
           <Typography
             variant="subtitle2"
-            color="text.primary"
-            fontWeight="bold"
+            sx={{
+              color: 'text.primary',
+              fontWeight: 'bold'
+            }}
           >
             67 active
           </Typography>
