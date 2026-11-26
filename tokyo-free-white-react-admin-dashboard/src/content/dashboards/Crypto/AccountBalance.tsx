@@ -245,12 +245,15 @@ function AccountBalance() {
                   sm: 5
                 }}
               >
-                <Chart
-                  height={250}
-                  options={chartOptions}
-                  series={chartSeries}
-                  type="donut"
-                />
+                <Box sx={{ width: '100%', minWidth: 0 }}>
+                  <Chart
+                    width="100%"
+                    height={250}
+                    options={chartOptions}
+                    series={chartSeries}
+                    type="donut"
+                  />
+                </Box>
               </Grid>
               <Grid
                 sx={{
